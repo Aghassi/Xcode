@@ -1,6 +1,7 @@
 READ ME
 
-THIS CODE IS FOR PUBLIC USE
-IT WAS CREATED FOLLOWING ONLINE TUTORIALS WHILE I WAS LEARNING THE LANGUAGE
+THIS CODE IS NOT FOR PUBLIC USE
 
-PLEASE CREDIT ME WITH ANY AND ALL USE OF THIS MATERIAL IF USED FOR ANY PURPOSE OTHER THAN PERSONAL USE. THIS IS DEFINED AS FOR A WORK OR BUSINESS, NOT CASUAL CODING
+This app is in development between myself, and my friend. I use github to easily sync the code between devices. Please ask before using any code you see here (unless it is basic APIs which Apple provides)
+
+Currently, I am translating my code from Java to Objective-C
