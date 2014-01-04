@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5C0DE46B-5904-4F5A-9B91-12AD3487802B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Bubble Tea Choice</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>091ECF2B-9844-417A-8B6A-E8FD6E770C4B</key>
+		<string>https://github.com/Aghassi/Xcode.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Bubble Tea Choice/Bubble Tea Choice.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>091ECF2B-9844-417A-8B6A-E8FD6E770C4B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Aghassi/Xcode.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>091ECF2B-9844-417A-8B6A-E8FD6E770C4B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>091ECF2B-9844-417A-8B6A-E8FD6E770C4B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Xcode</string>
+		</dict>
+	</array>
+</dict>
+</plist>
