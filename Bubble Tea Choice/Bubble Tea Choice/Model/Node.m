@@ -10,12 +10,16 @@
 
 @implementation Node
 
-//Initiates with a node that contains the answer and the place it will be stored
+/**
+ *Overrides Init method to initialize with an answer and a number
+ *@param answer The answer being passed in
+ *@param number The the number assigned based on what was chosen
+ **/
 -(id)init:(NSString *)answer withNumber:(unsigned int)number{
     self = [super init];
     if(self){
         self.answer = answer;
-        self.place = number;
+        self.number = number;
         
     }
     return self;

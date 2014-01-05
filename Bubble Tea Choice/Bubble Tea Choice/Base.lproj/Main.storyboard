@@ -55,7 +55,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhR-p2-OjW">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhR-p2-OjW">
                                 <rect key="frame" x="140" y="518" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reset">
@@ -97,6 +97,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backButton" destination="4rJ-iS-y8g" id="n5x-2f-7q2"/>
+                        <outlet property="choicesLabel" destination="MoD-ks-nJL" id="jRV-uY-U94"/>
                         <outlet property="choicesText" destination="j6z-WD-Mt1" id="o1A-Wk-gCL"/>
                         <outlet property="falseButton" destination="Woh-dX-9M5" id="wqU-bF-gcs"/>
                         <outlet property="outputText" destination="WSD-ux-V0E" id="SmJ-qM-fjf"/>

@@ -7,17 +7,19 @@
 //
 
 #import "ViewController.h"
+#import "UserDecisions.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-
+UserDecisions *decision = nil;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     
 }
 
@@ -27,7 +29,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (IBAction)trueButton:(id)sender {
+    if(!decision){
+        decision = [[UserDecisions alloc]init];
+    }
+    [decision updateUI:[sender currentTitle]];
 }
 
 - (IBAction)falseButton:(id)sender {

@@ -17,6 +17,7 @@
 
 //Getter methods
 +(NSString *)getMainOption:(NSString *)object;
++(int) getIndexOfMainOption:(NSString *)answer;
 
 
 @end

@@ -26,6 +26,7 @@
 //Outlets for TextFields
 @property (weak, nonatomic) IBOutlet UITextField *outputText;
 @property (weak, nonatomic) IBOutlet UITextField *choicesText;
+@property (weak, nonatomic) IBOutlet UILabel *choicesLabel;
 
 
 @end

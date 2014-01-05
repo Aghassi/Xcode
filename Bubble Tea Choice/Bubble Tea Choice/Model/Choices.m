@@ -149,4 +149,13 @@ static NSArray *_answerOptions = nil;   //Array of results listed above
     return returnString;
 }
 
++(int)getIndexOfMainOption:(NSString *)answer{
+    int index = 0;
+    if ([_mainOptions containsObject:answer]) {
+        index = [_mainOptions indexOfObject:answer];
+    }
+    
+    return index;
+}
+
 @end
