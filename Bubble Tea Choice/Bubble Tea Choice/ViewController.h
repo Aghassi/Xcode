@@ -12,9 +12,20 @@
 //Buttons for choices
 - (IBAction)trueButton:(id)sender;
 - (IBAction)falseButton:(id)sender;
+
 //Navigation and reset
 - (IBAction)resetButton:(id)sender;
 - (IBAction)backButton:(id)sender;
+
+//Outlets Buttons
+@property (weak, nonatomic) IBOutlet UIButton *trueButton;
+@property (weak, nonatomic) IBOutlet UIButton *falseButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
+
+//Outlets for TextFields
+@property (weak, nonatomic) IBOutlet UITextField *outputText;
+@property (weak, nonatomic) IBOutlet UITextField *choicesText;
 
 
 @end

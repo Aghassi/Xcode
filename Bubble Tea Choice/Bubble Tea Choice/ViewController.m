@@ -33,6 +33,22 @@
 }
 
 - (IBAction)resetButton:(id)sender {
+    //Resets buttons and questions
+    [_trueButton setTitle:@"Milk" forState:UIControlStateNormal];
+    [_falseButton setTitle:@"No Milk" forState:UIControlStateNormal];
+    [_outputText setText:@"Do you want milk or no milk in your tea?"];
+    [_choicesText setText:@""];
+    
+    //Sets proper things visible and hidden
+    [_trueButton setHidden:false];
+    [_falseButton setHidden:false];
+    [_outputText setHidden:false];
+    [_choicesText setHidden:false];
+    [_backButton setHidden:true];
+    [_resetButton setHidden:true];
+    
+    //Set the answer count and children count
+    //Reset answer choices list.
 }
 
 - (IBAction)backButton:(id)sender {
