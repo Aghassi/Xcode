@@ -10,4 +10,13 @@
 
 @interface Choices : NSObject
 
+//Initialization methods
++(void)initializeMainOptions;
++(void)initializeAnswers;
++(void)initializeDictionary;
+
+//Getter methods
++(NSString *)getMainOption:(NSString *)object;
+
+
 @end

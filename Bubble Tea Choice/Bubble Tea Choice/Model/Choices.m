@@ -128,5 +128,25 @@ static NSArray *_answerOptions = nil;   //Array of results listed above
     
 }
 
+/*
+ Will get the string and return it from the main options
+ Will through an alert if the string is not found (eg is not in the list)
+ */
++(NSString *)getMainOption:(NSString *)object{
+    NSString *returnString = nil;
+    
+    if (!returnString) {
+        if([_mainOptions containsObject:object]){
+            int indexOfObject = [_mainOptions indexOfObject:object];
+            returnString = _mainOptions[indexOfObject];
+        }
+        else{
+            UIAlertView *failed = [[UIAlertView alloc]initWithTitle:@"String not found!" message:@"The string you are looking for could not be found in the array" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [failed show];
+        }
+    }
+    
+    return returnString;
+}
 
 @end

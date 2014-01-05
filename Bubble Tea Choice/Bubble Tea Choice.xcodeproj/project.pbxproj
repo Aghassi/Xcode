@@ -82,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		639B0BA11879262C002DC7E3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4A9F30818785D3F005A668D /* ViewController.h */,
+				D4A9F30918785D3F005A668D /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		63B7AC691878731700DEC3D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,12 +133,11 @@
 		D4A9F2F918785D3F005A668D /* Bubble Tea Choice */ = {
 			isa = PBXGroup;
 			children = (
+				639B0BA11879262C002DC7E3 /* Controllers */,
 				63B7AC691878731700DEC3D1 /* Model */,
 				D4A9F30218785D3F005A668D /* AppDelegate.h */,
 				D4A9F30318785D3F005A668D /* AppDelegate.m */,
 				D4A9F30518785D3F005A668D /* Main.storyboard */,
-				D4A9F30818785D3F005A668D /* ViewController.h */,
-				D4A9F30918785D3F005A668D /* ViewController.m */,
 				D4A9F30B18785D3F005A668D /* Images.xcassets */,
 				D4A9F2FA18785D3F005A668D /* Supporting Files */,
 			);
