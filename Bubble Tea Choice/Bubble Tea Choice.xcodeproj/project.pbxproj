@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630A111D18787165002CE548 /* Choices.m in Sources */ = {isa = PBXBuildFile; fileRef = 630A111C18787165002CE548 /* Choices.m */; };
 		D4A9F2F418785D3F005A668D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A9F2F318785D3F005A668D /* Foundation.framework */; };
 		D4A9F2F618785D3F005A668D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A9F2F518785D3F005A668D /* CoreGraphics.framework */; };
 		D4A9F2F818785D3F005A668D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A9F2F718785D3F005A668D /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		630A111B18787165002CE548 /* Choices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Choices.h; path = Model/Choices.h; sourceTree = "<group>"; };
+		630A111C18787165002CE548 /* Choices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Choices.m; path = Model/Choices.m; sourceTree = "<group>"; };
 		D4A9F2F018785D3F005A668D /* Bubble Tea Choice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bubble Tea Choice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A9F2F318785D3F005A668D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4A9F2F518785D3F005A668D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63B7AC691878731700DEC3D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				630A111B18787165002CE548 /* Choices.h */,
+				630A111C18787165002CE548 /* Choices.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		D4A9F2E718785D3F005A668D = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +124,7 @@
 		D4A9F2F918785D3F005A668D /* Bubble Tea Choice */ = {
 			isa = PBXGroup;
 			children = (
+				63B7AC691878731700DEC3D1 /* Model */,
 				D4A9F30218785D3F005A668D /* AppDelegate.h */,
 				D4A9F30318785D3F005A668D /* AppDelegate.m */,
 				D4A9F30518785D3F005A668D /* Main.storyboard */,
@@ -251,6 +264,7 @@
 			files = (
 				D4A9F30A18785D3F005A668D /* ViewController.m in Sources */,
 				D4A9F30418785D3F005A668D /* AppDelegate.m in Sources */,
+				630A111D18787165002CE548 /* Choices.m in Sources */,
 				D4A9F30018785D3F005A668D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +474,7 @@
 				D4A9F32418785D3F005A668D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4A9F32518785D3F005A668D /* Build configuration list for PBXNativeTarget "Bubble Tea ChoiceTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +483,7 @@
 				D4A9F32718785D3F005A668D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

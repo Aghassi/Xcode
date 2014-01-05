@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+//Buttons for choices
+- (IBAction)trueButton:(id)sender;
+- (IBAction)falseButton:(id)sender;
+//Navigation and reset
+- (IBAction)resetButton:(id)sender;
+- (IBAction)backButton:(id)sender;
+
 
 @end
