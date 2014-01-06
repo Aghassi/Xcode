@@ -27,6 +27,8 @@
     return self;
 }
 
+
+//Called when either true or false are pressed
 -(void)updateUI:(NSString *)answer{
     //Load helper
     
@@ -59,15 +61,24 @@
          *Update the UI to show the new choices otherwise
          */
         else{
-            [self.delegate updateTrueButton:[Choices getMainOptionAtIndex:self.childrenCount]];
-            [self.delegate updateFalseButton:[Choices getMainOptionAtIndex:self.childrenCount+1]];
-            [self.delegate updateOutput:[NSString stringWithFormat:@"Do you want %@ or %@",
-                [Choices getMainOptionAtIndex:self.childrenCount],
-                                         [Choices getMainOptionAtIndex:self.childrenCount +1]]];
+            if ([answer isEqualToString:[Choices getMainOptionAtIndex:1]] || [answer isEqualToString:[Choices getMainOptionAtIndex:2]]) {
+                [self.delegate makeBackVisible];
+            }
+            [self updateButtonsAndText];
+            [self.delegate updateChoices:answer];
         }
     }
     
     
+}
+
+//Called when the back, true, or false buttons is pressed
+-(void)updateButtonsAndText{
+    [self.delegate updateTrueButton:[NSString stringWithFormat:@"%@", [Choices getMainOptionAtIndex:self.childrenCount]]];
+    [self.delegate updateFalseButton:[NSString stringWithFormat:@"%@",[Choices getMainOptionAtIndex:self.childrenCount +1]]];
+    [self.delegate updateOutput:[NSString stringWithFormat:@"Do you want %@ or %@ in your tea?" ,
+                                 [Choices getMainOptionAtIndex:self.childrenCount],
+                                 [Choices getMainOptionAtIndex:self.childrenCount +1]]];
 }
 
 //Adds an answer to the NSMutableList to be looked up at the end
@@ -107,6 +118,24 @@
         
     }
     
+}
+
+//Removes an answer from the answer list
+-(void)removeAnswer{
+    //Decrement the count so as not to remove nothing
+    self.answerCount--;
+    [answers removeLastObject];
+    
+    //Removes last answer from the choice array
+    //Also updates the onscreen display of choices.
+    [self.delegate removeChoiceFromArray];
+    
+}
+
+//Resets the answers array when the user calls reset
+-(void)resetAnswers{
+    [answers removeAllObjects];
+    //NSLog(@"Answers have been reset %@", answers);
 }
 
 @end

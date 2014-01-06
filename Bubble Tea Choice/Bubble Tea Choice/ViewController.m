@@ -16,6 +16,7 @@
 @implementation ViewController
 //Used for calling certain methods
 UserDecisions *decision = nil;
+NSMutableArray *choicesArray;
 
 - (void)viewDidLoad
 {
@@ -62,9 +63,23 @@ UserDecisions *decision = nil;
     //Reset answer choices list.
     decision.childrenCount = 1;
     decision.answerCount= 0;
+    [decision resetAnswers];
+    
 }
 
 - (IBAction)backButton:(id)sender {
+    [decision removeAnswer];
+    decision.childrenCount= decision.childrenCount/2;
+    
+    if(decision.childrenCount <0){
+        decision.childrenCount = 1;
+    }
+    else if (decision.childrenCount <=2){
+        decision.childrenCount = 1;
+        [_backButton setHidden:true];
+    }
+    [decision updateButtonsAndText];
+    
     
 }
 
@@ -79,6 +94,11 @@ UserDecisions *decision = nil;
     [_resetButton setHidden:false];
 }
 
+//Makes back button visible
+-(void)makeBackVisible{
+    [_backButton setHidden:false];
+}
+
 //Updates the text on the false button
 -(void)updateFalseButton:(NSString *)falseString{
     [_falseButton setTitle:falseString forState:UIControlStateNormal];
@@ -89,8 +109,35 @@ UserDecisions *decision = nil;
     [_trueButton setTitle:trueString forState:UIControlStateNormal];
 }
 
+//Updates the output text box
 -(void)updateOutput:(NSString *)output{
     [_outputText setText:output];
+}
+
+//Updates the choices textbox
+-(void)updateChoices:(NSString *)choices{
+    if(!choicesArray){
+        choicesArray = [[NSMutableArray alloc] initWithCapacity:4];
+    }
+    //If this is the first button press, add string to array and display
+    if([_choicesText.text isEqualToString:@""]){
+        [choicesArray addObject:choices];
+        _choicesText.text = [NSString stringWithFormat:@"%@", choices];
+    }
+    //Otherwise, add the new string to the array, and print the array
+    //using a comma as a way to concatinate the string and get rid of
+    //the ugly look of printing out an array.
+    else{
+        [choicesArray addObject:choices];
+        [_choicesText setText:[NSString stringWithFormat:@"%@",[choicesArray componentsJoinedByString:@", "]]];
+    }
+}
+
+//Removes the last choice from the array
+-(void)removeChoiceFromArray{
+    [choicesArray removeLastObject];
+    [_choicesText setText:[NSString stringWithFormat:@"%@", [choicesArray componentsJoinedByString:@","]]];
+    
 }
 
 @end
