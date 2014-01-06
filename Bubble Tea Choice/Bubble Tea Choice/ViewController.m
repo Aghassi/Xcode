@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "UserDecisions.h"
 
+
 @interface ViewController ()
 
 @end
@@ -89,7 +90,6 @@ NSMutableArray *choicesArray;
 -(void)hideAll{
     [_trueButton setHidden:true];
     [_falseButton setHidden:true];
-    [_choicesText setHidden:true];
     [_backButton setHidden:true];
     [_resetButton setHidden:false];
 }
@@ -139,5 +139,9 @@ NSMutableArray *choicesArray;
     [_choicesText setText:[NSString stringWithFormat:@"%@", [choicesArray componentsJoinedByString:@","]]];
     
 }
+
+#pragma - Add In View Controller Delegate -
+
+
 
 @end

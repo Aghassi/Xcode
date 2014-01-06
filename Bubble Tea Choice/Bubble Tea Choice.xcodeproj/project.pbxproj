@@ -91,10 +91,8 @@
 		639B0BA11879262C002DC7E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				63C8A1BD18799BA000C7578D /* UserDecisions.h */,
-				63C8A1BE18799BA000C7578D /* UserDecisions.m */,
-				D4A9F30818785D3F005A668D /* ViewController.h */,
-				D4A9F30918785D3F005A668D /* ViewController.m */,
+				D4A4A43A187B5BEE008E6FE9 /* Views */,
+				D4A4A439187B5BE5008E6FE9 /* Data */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -108,6 +106,24 @@
 				630A111C18787165002CE548 /* Choices.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		D4A4A439187B5BE5008E6FE9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				63C8A1BD18799BA000C7578D /* UserDecisions.h */,
+				63C8A1BE18799BA000C7578D /* UserDecisions.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		D4A4A43A187B5BEE008E6FE9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4A9F30818785D3F005A668D /* ViewController.h */,
+				D4A9F30918785D3F005A668D /* ViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		D4A9F2E718785D3F005A668D = {
