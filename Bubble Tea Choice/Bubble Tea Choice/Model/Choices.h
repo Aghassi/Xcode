@@ -17,7 +17,9 @@
 
 //Getter methods
 +(NSString *)getMainOption:(NSString *)object;
++(NSString *)getMainOptionAtIndex: (unsigned int)index;
 +(int) getIndexOfMainOption:(NSString *)answer;
++(BOOL)mainOptionsContains:(NSString *)answer;
 
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserDecisions.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <updateUIDelegate>;
 //Buttons for choices
 - (IBAction)trueButton:(id)sender;
 - (IBAction)falseButton:(id)sender;

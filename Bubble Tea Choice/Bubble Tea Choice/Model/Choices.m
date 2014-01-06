@@ -149,6 +149,11 @@ static NSArray *_answerOptions = nil;   //Array of results listed above
     return returnString;
 }
 
++(NSString *)getMainOptionAtIndex:(unsigned int)index{
+    NSLog(@" %@", _mainOptions[index]);
+    return _mainOptions[index];
+}
+
 +(int)getIndexOfMainOption:(NSString *)answer{
     int index = 0;
     if ([_mainOptions containsObject:answer]) {
@@ -156,6 +161,10 @@ static NSArray *_answerOptions = nil;   //Array of results listed above
     }
     
     return index;
+}
+
++(BOOL)mainOptionsContains:(NSString *)answer{
+    return [_mainOptions containsObject:answer];
 }
 
 @end

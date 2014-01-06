@@ -9,7 +9,6 @@
 #import "UserDecisions.h"
 #import "Node.h"
 #import "Choices.h"
-#import "ViewController.h"
 
 @implementation UserDecisions{
     NSMutableArray *answers;
@@ -29,6 +28,8 @@
 }
 
 -(void)updateUI:(NSString *)answer{
+    //Load helper
+    
     //Add the answer to the list of answers
     [self addAnswer:answer];
     
@@ -42,13 +43,28 @@
     
     //If less sweet or more sweet, show answers
     if([ answer isEqualToString:@"Less Sweet"] || [answer isEqualToString:@"More Sweet"]){
-        ViewController *viewHelper = [[ViewController alloc]init];
-        [viewHelper.trueButton setHidden:true];
-        [viewHelper.falseButton setHidden:true];
-        [viewHelper.backButton setHidden:true];
-        [viewHelper.choicesText setHidden:true];
-        [viewHelper.choicesLabel setHidden:true];
+        //Hide all
+        [self.delegate hideAll];
         
+    }
+    else if ([Choices mainOptionsContains:answer]){
+        /*
+         *If Tangy, Show answer
+         */
+        if([answer isEqualToString:[Choices getMainOptionAtIndex:6]]){
+            [self.delegate hideAll];
+        }
+        
+        /*
+         *Update the UI to show the new choices otherwise
+         */
+        else{
+            [self.delegate updateTrueButton:[Choices getMainOptionAtIndex:self.childrenCount]];
+            [self.delegate updateFalseButton:[Choices getMainOptionAtIndex:self.childrenCount+1]];
+            [self.delegate updateOutput:[NSString stringWithFormat:@"Do you want %@ or %@",
+                [Choices getMainOptionAtIndex:self.childrenCount],
+                                         [Choices getMainOptionAtIndex:self.childrenCount +1]]];
+        }
     }
     
     

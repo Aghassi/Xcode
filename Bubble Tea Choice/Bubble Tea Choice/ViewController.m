@@ -14,12 +14,17 @@
 @end
 
 @implementation ViewController
+//Used for calling certain methods
 UserDecisions *decision = nil;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    if(!decision){
+        decision = [[UserDecisions alloc]init];
+        [decision setDelegate:self];
+    }
     
 }
 
@@ -31,13 +36,11 @@ UserDecisions *decision = nil;
 
 
 - (IBAction)trueButton:(id)sender {
-    if(!decision){
-        decision = [[UserDecisions alloc]init];
-    }
     [decision updateUI:[sender currentTitle]];
 }
 
 - (IBAction)falseButton:(id)sender {
+    [decision updateUI:[sender currentTitle]];
 }
 
 - (IBAction)resetButton:(id)sender {
@@ -57,8 +60,37 @@ UserDecisions *decision = nil;
     
     //Set the answer count and children count
     //Reset answer choices list.
+    decision.childrenCount = 1;
+    decision.answerCount= 0;
 }
 
 - (IBAction)backButton:(id)sender {
+    
 }
+
+#pragma - updateUIDelegates -
+
+//Called when the last screen is displayed
+-(void)hideAll{
+    [_trueButton setHidden:true];
+    [_falseButton setHidden:true];
+    [_choicesText setHidden:true];
+    [_backButton setHidden:true];
+    [_resetButton setHidden:false];
+}
+
+//Updates the text on the false button
+-(void)updateFalseButton:(NSString *)falseString{
+    [_falseButton setTitle:falseString forState:UIControlStateNormal];
+}
+
+//Updates the text on the true button
+-(void)updateTrueButton:(NSString *)trueString{
+    [_trueButton setTitle:trueString forState:UIControlStateNormal];
+}
+
+-(void)updateOutput:(NSString *)output{
+    [_outputText setText:output];
+}
+
 @end
