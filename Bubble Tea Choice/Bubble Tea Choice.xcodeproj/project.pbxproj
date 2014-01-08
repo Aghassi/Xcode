@@ -10,6 +10,7 @@
 		630A111D18787165002CE548 /* Choices.m in Sources */ = {isa = PBXBuildFile; fileRef = 630A111C18787165002CE548 /* Choices.m */; };
 		63C8A1BF18799BA000C7578D /* UserDecisions.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C8A1BE18799BA000C7578D /* UserDecisions.m */; };
 		63C8A1C218799D1700C7578D /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C8A1C118799D1700C7578D /* Node.m */; };
+		D45ED9D7187C435000829439 /* FlavorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45ED9D6187C435000829439 /* FlavorViewController.m */; };
 		D4A9F2F418785D3F005A668D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A9F2F318785D3F005A668D /* Foundation.framework */; };
 		D4A9F2F618785D3F005A668D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A9F2F518785D3F005A668D /* CoreGraphics.framework */; };
 		D4A9F2F818785D3F005A668D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A9F2F718785D3F005A668D /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 		63C8A1BE18799BA000C7578D /* UserDecisions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDecisions.m; path = Controller/UserDecisions.m; sourceTree = "<group>"; };
 		63C8A1C018799D1700C7578D /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Node.h; path = Model/Node.h; sourceTree = "<group>"; };
 		63C8A1C118799D1700C7578D /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Node.m; path = Model/Node.m; sourceTree = "<group>"; };
+		D45ED9D5187C435000829439 /* FlavorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlavorViewController.h; path = Controller/FlavorViewController.h; sourceTree = "<group>"; };
+		D45ED9D6187C435000829439 /* FlavorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlavorViewController.m; path = Controller/FlavorViewController.m; sourceTree = "<group>"; };
 		D4A9F2F018785D3F005A668D /* Bubble Tea Choice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bubble Tea Choice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A9F2F318785D3F005A668D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4A9F2F518785D3F005A668D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,8 @@
 			children = (
 				D4A9F30818785D3F005A668D /* ViewController.h */,
 				D4A9F30918785D3F005A668D /* ViewController.m */,
+				D45ED9D5187C435000829439 /* FlavorViewController.h */,
+				D45ED9D6187C435000829439 /* FlavorViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				D4A9F30A18785D3F005A668D /* ViewController.m in Sources */,
 				63C8A1BF18799BA000C7578D /* UserDecisions.m in Sources */,
 				D4A9F30418785D3F005A668D /* AppDelegate.m in Sources */,
+				D45ED9D7187C435000829439 /* FlavorViewController.m in Sources */,
 				630A111D18787165002CE548 /* Choices.m in Sources */,
 				D4A9F30018785D3F005A668D /* main.m in Sources */,
 				63C8A1C218799D1700C7578D /* Node.m in Sources */,

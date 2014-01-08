@@ -167,4 +167,15 @@ static NSArray *_answerOptions = nil;   //Array of results listed above
     return [_mainOptions containsObject:answer];
 }
 
+
++(int)getDictionarySize{
+    return [_lookUp count];
+}
+
++(Node *)getNodeAtIndex:(unsigned int)index{
+    if (!_lookUp) {
+        [Choices initializeDictionary];
+    }
+    
+}
 @end

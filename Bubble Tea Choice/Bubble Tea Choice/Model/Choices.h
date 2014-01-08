@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Node;
 
 @interface Choices : NSObject
 
@@ -15,11 +16,14 @@
 +(void)initializeAnswers;
 +(void)initializeDictionary;
 
-//Getter methods
+//Getter methods for main options
 +(NSString *)getMainOption:(NSString *)object;
 +(NSString *)getMainOptionAtIndex: (unsigned int)index;
 +(int) getIndexOfMainOption:(NSString *)answer;
 +(BOOL)mainOptionsContains:(NSString *)answer;
 
+//Getter methods for dictionary
++(int)getDictionarySize;
++(Node *)getNodeAtIndex:(unsigned int)index;
 
 @end

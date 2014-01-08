@@ -37,6 +37,8 @@
 //Called when the back, true, or false buttons is pressed
 -(void)updateButtonsAndText;
 
+-(void)displayChoices;
+
 //Updates the answers chosen. Called by updateUI.
 -(void)addAnswer:(NSString *)answer;
 

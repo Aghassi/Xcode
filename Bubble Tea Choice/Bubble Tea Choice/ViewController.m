@@ -92,6 +92,8 @@ NSMutableArray *choicesArray;
     [_falseButton setHidden:true];
     [_backButton setHidden:true];
     [_resetButton setHidden:false];
+    [_finalizeButton setHidden:false];
+    
 }
 
 //Makes back button visible
@@ -140,8 +142,10 @@ NSMutableArray *choicesArray;
     
 }
 
-#pragma - Add In View Controller Delegate -
-
+#pragma - Flavor View Controller Delegate -
+-(void)userDidSelectFlavor{
+    
+}
 
 
 @end

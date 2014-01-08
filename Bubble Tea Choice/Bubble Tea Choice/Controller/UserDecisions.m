@@ -47,6 +47,7 @@
     if([ answer isEqualToString:@"Less Sweet"] || [answer isEqualToString:@"More Sweet"]){
         //Hide all
         [self.delegate hideAll];
+        [self.delegate updateChoices:answer];
         
     }
     else if ([Choices mainOptionsContains:answer]){
@@ -55,6 +56,7 @@
          */
         if([answer isEqualToString:[Choices getMainOptionAtIndex:6]]){
             [self.delegate hideAll];
+            [self.delegate updateChoices:answer];
         }
         
         /*
@@ -79,6 +81,18 @@
     [self.delegate updateOutput:[NSString stringWithFormat:@"Do you want %@ or %@ in your tea?" ,
                                  [Choices getMainOptionAtIndex:self.childrenCount],
                                  [Choices getMainOptionAtIndex:self.childrenCount +1]]];
+}
+
+-(void)displayChoices{
+    [Choices initializeAnswers];
+    [Choices initializeDictionary];
+    
+    NSString *treePathNumber;
+    //See if you can get a smaller capacity in future
+    NSMutableString *builder = [[NSMutableString alloc]init];
+    for (int index = 0; index< [Choices getDictionarySize]; index++) {
+        [builder appendString:[[NSString stringWithFormat:@" %d", [Choices getNodeAtIndex:index].number]init]];
+    }
 }
 
 //Adds an answer to the NSMutableList to be looked up at the end
