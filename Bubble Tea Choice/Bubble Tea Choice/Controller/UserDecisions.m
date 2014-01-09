@@ -48,6 +48,7 @@
         //Hide all
         [self.delegate hideAll];
         [self.delegate updateChoices:answer];
+        [self displayChoices];
         
     }
     else if ([Choices mainOptionsContains:answer]){
@@ -57,6 +58,7 @@
         if([answer isEqualToString:[Choices getMainOptionAtIndex:6]]){
             [self.delegate hideAll];
             [self.delegate updateChoices:answer];
+            [self displayChoices];
         }
         
         /*
@@ -83,6 +85,8 @@
                                  [Choices getMainOptionAtIndex:self.childrenCount +1]]];
 }
 
+
+//Method retrives the answers to be displayed on screen
 -(void)displayChoices{
     [Choices initializeAnswers];
     [Choices initializeDictionary];
@@ -90,9 +94,26 @@
     NSString *treePathNumber;
     //See if you can get a smaller capacity in future
     NSMutableString *builder = [[NSMutableString alloc]init];
-    for (int index = 0; index< [Choices getDictionarySize]; index++) {
-        [builder appendString:[[NSString stringWithFormat:@" %d", [Choices getNodeAtIndex:index].number]init]];
+    
+    //Loops through the array, getting the number in each node
+    //Builds the tree index for which the answer will be looked up.
+    //0 is left, 1 is right
+    for (int index = 0; index< [answers count]; index++) {
+        [builder appendString:[[NSString stringWithFormat:@"%d", [answers[index] number]]init]];
+        NSLog(@"%d",[answers[index] number]);
     }
+    //Assigns the string built to the treepath so we can look it up
+    //Unnecessary, can be removed later for memory overhead.
+    treePathNumber = [builder description];
+    
+    //Settiing builder to nil since we no longer need it, let ARC dealloc it
+    builder = nil;
+    
+    NSString *returnOptions = nil;
+    if ([Choices containsKey:treePathNumber]) {
+        returnOptions = [Choices getNodeForKey:treePathNumber].answer;
+    }
+   
 }
 
 //Adds an answer to the NSMutableList to be looked up at the end

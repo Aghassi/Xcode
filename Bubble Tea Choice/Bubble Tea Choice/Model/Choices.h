@@ -24,6 +24,10 @@
 
 //Getter methods for dictionary
 +(int)getDictionarySize;
-+(Node *)getNodeAtIndex:(unsigned int)index;
++(Node *)getNodeForKey:(NSString *)key;
++(BOOL)containsKey:(NSString *)key;
+
+//Error handling
++(void)throwErrorMessage;
 
 @end

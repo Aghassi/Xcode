@@ -141,19 +141,20 @@ static NSArray *_answerOptions = nil;   //Array of results listed above
             returnString = _mainOptions[indexOfObject];
         }
         else{
-            UIAlertView *failed = [[UIAlertView alloc]initWithTitle:@"String not found!" message:@"The string you are looking for could not be found in the array" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-            [failed show];
+            [self throwErrorMessage];
         }
     }
     
     return returnString;
 }
 
+//Gets the answer stored at the index being passed in
 +(NSString *)getMainOptionAtIndex:(unsigned int)index{
     NSLog(@" %@", _mainOptions[index]);
     return _mainOptions[index];
 }
 
+//Gets the index of the option being passed in
 +(int)getIndexOfMainOption:(NSString *)answer{
     int index = 0;
     if ([_mainOptions containsObject:answer]) {
@@ -163,19 +164,48 @@ static NSArray *_answerOptions = nil;   //Array of results listed above
     return index;
 }
 
+//Checks if the main options has the answer being passed in
 +(BOOL)mainOptionsContains:(NSString *)answer{
     return [_mainOptions containsObject:answer];
 }
 
+#pragma -Dictionary Methods-
 
+//Returns the size of the dictionary
 +(int)getDictionarySize{
     return [_lookUp count];
 }
 
-+(Node *)getNodeAtIndex:(unsigned int)index{
-    if (!_lookUp) {
-        [Choices initializeDictionary];
+//Returns true if the node being looked up exists in the dictionary
++(BOOL)containsKey:(NSString *)key{
+    if ([_lookUp objectForKey:key] == nil) {
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+//Gets the node at the given key
++(Node *)getNodeForKey:(NSString *)key{
+    id returnKey = nil;
+    
+    //If it exists, put the object in a value to be returned.
+    if ([_lookUp objectForKey:key] != nil) {
+        returnKey = [_lookUp objectForKey:key];
+    }
+    else{
+        [self throwErrorMessage];
     }
     
+    return returnKey;
 }
+
+#pragma -Error Handling-
+
++(void)throwErrorMessage{
+    UIAlertView *failed = [[UIAlertView alloc]initWithTitle:@"String not found!" message:@"The string you are looking for could not be found in the array" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [failed show];
+}
+
 @end
