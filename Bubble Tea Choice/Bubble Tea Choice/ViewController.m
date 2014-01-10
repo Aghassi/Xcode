@@ -59,6 +59,7 @@ NSMutableArray *choicesArray;
     [_choicesText setHidden:false];
     [_backButton setHidden:true];
     [_resetButton setHidden:true];
+    [_finalizeButton setHidden:true];
     
     //Set the answer count and children count
     //Reset answer choices list.
@@ -143,9 +144,13 @@ NSMutableArray *choicesArray;
 }
 
 #pragma - Flavor View Controller Delegate -
--(void)userDidSelectFlavor{
-    
-}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"FlavorViewController"]) {
+        FlavorViewController *flavorViewController = segue.destinationViewController;
+        flavorViewController.delegate = self;
+    }
+}
 
 @end

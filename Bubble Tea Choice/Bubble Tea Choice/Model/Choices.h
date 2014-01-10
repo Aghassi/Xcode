@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Node;
+
 
 @interface Choices : NSObject
 
@@ -24,7 +24,7 @@
 
 //Getter methods for dictionary
 +(int)getDictionarySize;
-+(Node *)getNodeForKey:(NSString *)key;
++(NSArray *)getNodeForKey:(NSString *)key;
 +(BOOL)containsKey:(NSString *)key;
 
 //Error handling

@@ -51,30 +51,30 @@ static NSArray *_answerOptions = nil;   //Array of results listed above
  */
 +(void)initializeAnswers{
     if (!_allSet) {
-        _11 = @[@"Kumquat-Lemon \n",
-                @"Green Apple \n",
-                @"Kiwi \n",
-                @"Grapefruite \n",
-                @"Lemon \n"];
+        _11 = @[@"Kumquat-Lemon ",
+                @"Green Apple ",
+                @"Kiwi ",
+                @"Grapefruite ",
+                @"Lemon "];
         NSLog(@"Tangy: Initialized");
         
-        _101 = @[@"Mango \n",
-                 @"Strawberry \n",
-                 @"Blackberry \n",
-                 @"Rasberry \n",
-                 @"Grape \n",
-                 @"Passion Fruit \n",
-                 @"Lychee \n",
-                 @"Peach (white) \n",
-                 @"Rose \n",
-                 @"Rose-Lychee \n",
-                 @"Pineapple \n"];
+        _101 = @[@"Mango ",
+                 @"Strawberry ",
+                 @"Blackberry ",
+                 @"Rasberry ",
+                 @"Grape ",
+                 @"Passion Fruit ",
+                 @"Lychee ",
+                 @"Peach (white) ",
+                 @"Rose ",
+                 @"Rose-Lychee ",
+                 @"Pineapple "];
         NSLog(@"Fruity More Sweet Milk: Initialized");
         
-        _100 = @[@"Peach \n",
-                 @"Honey \n",
-                 @"Peppermint \n",
-                 @"Honeydew \n"];
+        _100 = @[@"Peach ",
+                 @"Honey ",
+                 @"Peppermint ",
+                 @"Honeydew "];
         NSLog(@"Fruity Less Sweet Milk: Initialized");
         
         _011 = _101;
@@ -83,21 +83,21 @@ static NSArray *_answerOptions = nil;   //Array of results listed above
         _010 = _100;
         NSLog(@"Fruity Less Sweet No Milk: Initialized");
         
-        _001 = @[@"Boba\n",
-                 @"Almond \n",
-                 @"Coconut \n",
-                 @"Coffee\n",
-                 @"Red Bean \n",
-                 @"Green Milk \n",
+        _001 = @[@"Boba",
+                 @"Almond ",
+                 @"Coconut ",
+                 @"Coffee",
+                 @"Red Bean ",
+                 @"Green Milk ",
                  @"Mocha"];
         NSLog(@"Earthy Less Sweet: Initialized");
         
-        _000 = @[@"Thai \n",
-                 @"Taro \n",
-                 @"Vanilla \n",
-                 @"Chocolate \n",
-                 @"Vanilla Latte \n",
-                 @"Chai \n"];
+        _000 = @[@"Thai ",
+                 @"Taro ",
+                 @"Vanilla ",
+                 @"Chocolate ",
+                 @"Vanilla Latte ",
+                 @"Chai "];
         NSLog(@"Earthy More Sweet: Initialized");
         
         
@@ -187,7 +187,7 @@ static NSArray *_answerOptions = nil;   //Array of results listed above
 }
 
 //Gets the node at the given key
-+(Node *)getNodeForKey:(NSString *)key{
++(NSArray *)getNodeForKey:(NSString *)key{
     id returnKey = nil;
     
     //If it exists, put the object in a value to be returned.

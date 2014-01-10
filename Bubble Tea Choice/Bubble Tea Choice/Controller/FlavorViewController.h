@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol FlavorViewControllerDelegate
-
--(void)userDidSelectFlavor;
+@protocol FlavorViewControllerDelegate <NSObject>
 
 @end
 
-@interface FlavorViewController : UIViewController
+@interface FlavorViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+    IBOutlet UITableView *flavors;
+}
+
+@property(nonatomic, weak)id<FlavorViewControllerDelegate> delegate;
 
 @end

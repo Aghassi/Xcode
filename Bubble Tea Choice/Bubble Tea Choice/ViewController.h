@@ -10,7 +10,8 @@
 #import "UserDecisions.h"
 #import "FlavorViewController.h"
 
-@interface ViewController : UIViewController <updateUIDelegate,FlavorViewControllerDelegate>;
+
+@interface ViewController : UIViewController <updateUIDelegate, FlavorViewControllerDelegate>;
 //Buttons for choices
 - (IBAction)trueButton:(id)sender;
 - (IBAction)falseButton:(id)sender;

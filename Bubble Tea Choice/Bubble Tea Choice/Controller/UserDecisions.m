@@ -12,7 +12,10 @@
 
 @implementation UserDecisions{
     NSMutableArray *answers;
+    //Options to be returned when user is ready to finalize
 }
+
+NSArray *returnChoices=nil;
 
 //Overrides the init method to define instance variables
 -(id)init{
@@ -48,7 +51,7 @@
         //Hide all
         [self.delegate hideAll];
         [self.delegate updateChoices:answer];
-        [self displayChoices];
+        [self gatherChoices];
         
     }
     else if ([Choices mainOptionsContains:answer]){
@@ -58,7 +61,7 @@
         if([answer isEqualToString:[Choices getMainOptionAtIndex:6]]){
             [self.delegate hideAll];
             [self.delegate updateChoices:answer];
-            [self displayChoices];
+            [self gatherChoices];
         }
         
         /*
@@ -87,9 +90,9 @@
 
 
 //Method retrives the answers to be displayed on screen
--(void)displayChoices{
+-(void)gatherChoices{
+    //Initializes answers, and the dictionary.
     [Choices initializeAnswers];
-    [Choices initializeDictionary];
     
     NSString *treePathNumber;
     //See if you can get a smaller capacity in future
@@ -109,12 +112,14 @@
     //Settiing builder to nil since we no longer need it, let ARC dealloc it
     builder = nil;
     
-    NSString *returnOptions = nil;
     if ([Choices containsKey:treePathNumber]) {
-        returnOptions = [Choices getNodeForKey:treePathNumber].answer;
+        returnChoices = [Choices getNodeForKey:treePathNumber];
+        NSLog(@"%@", returnChoices);
     }
    
 }
+
+#pragma -Updating Answers-
 
 //Adds an answer to the NSMutableList to be looked up at the end
 //Of the decision cycle
@@ -172,5 +177,11 @@
     [answers removeAllObjects];
     //NSLog(@"Answers have been reset %@", answers);
 }
+
+#pragma -TableView Methods_
++(NSArray *)returnFlavorsOptions{
+    return returnChoices;
+}
+
 
 @end
