@@ -41,6 +41,7 @@ static NSArray *_answerOptions = nil;   //Array of results listed above
                          @"Milk", @"No Milk",
                          @"Earthy",@"Fruity",
                          @"Fruity",@"Tangy",
+                         @"Less Sweet", @"More Sweet"
                          @"Less Sweet", @"More Sweet"];
     }
 

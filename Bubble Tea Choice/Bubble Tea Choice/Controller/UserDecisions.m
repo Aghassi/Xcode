@@ -47,7 +47,7 @@ NSArray *returnChoices=nil;
     self.childrenCount = (_childrenCount * 2)+1;
     
     //If less sweet or more sweet, show answers
-    if([ answer isEqualToString:@"Less Sweet"] || [answer isEqualToString:@"More Sweet"]){
+    if([answer isEqualToString:@"Less Sweet"] || [answer isEqualToString:@"More Sweet"]){
         //Hide all
         [self.delegate hideAll];
         [self.delegate updateChoices:answer];
@@ -134,6 +134,10 @@ NSArray *returnChoices=nil;
         if ([answer isEqualToString:[Choices getMainOption:answer]]) {
             //Gets the index of the answer
             index = [Choices getIndexOfMainOption:answer];
+            
+            if ([answers[0] isEqualToString:@"No Milk"]) {
+                index = 5;
+            }
             
             //Checks if it is an even or odd index
             //Checks that it isn't an answer we already went through
