@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sosh Reader/ViewController.m"
-            timestampString = "411360656.065768"
+            timestampString = "411418521.587425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-sortText:"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-sortByLength:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

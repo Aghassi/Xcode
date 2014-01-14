@@ -72,16 +72,23 @@ NSArray *arrayOfText;
         //Set the old sorted array to the new temp array
         //Set the temp array to nil so it gets cleaned up
         else if (textNode.length > ((Nodes *)sortedArray[0]).length){
-            NSMutableArray *temp = [[NSMutableArray alloc]initWithObjects:textNode, nil];
-            [temp replaceObjectsInRange:NSMakeRange(1, [sortedArray count])withObjectsFromArray:sortedArray];
+            NSMutableArray *temp = [[NSMutableArray alloc]initWithCapacity:[sortedArray count]];
+            [temp insertObject:textNode atIndex:0];
+//            [temp replaceObjectsInRange:NSMakeRange(1, [sortedArray count])withObjectsFromArray:sortedArray];
+            [temp insertObjects:sortedArray atIndexes:[[NSIndexSet alloc]initWithIndexesInRange:NSMakeRange(1, [sortedArray count])]];
             [sortedArray setArray:temp];
             temp = nil;
+        }
+        //If it is the lowest length object, just add it to the end of the array
+        else if (textNode.length < ((Nodes *)[sortedArray lastObject]).length){
+            [sortedArray addObject:textNode];
         }
         else{
             //Recursively call break down function
             //Use binary search to find the area where the new
             //Node needs to be inserted
             [self findPositionIn:sortedArray forObject:textNode];
+            NSLog(@"%@", [sortedArray description]);
         }
         
     }
@@ -94,6 +101,8 @@ NSArray *arrayOfText;
     int shortest = ((Nodes *)[sortedArray lastObject]).length;
     while (longest>=shortest) {
         int midpoint = (longest + shortest)/2;
+        int midArray = [self getPositionInArray:sortedArray forLength:midpoint];
+        
         if (node.length > midpoint) {
             shortest = midpoint - 1;
         }
@@ -106,8 +115,7 @@ NSArray *arrayOfText;
             //then use the replaceObjectsInRange function to fill the end of the array
             NSMutableArray *temp = [[NSMutableArray alloc]init];
             [temp setArray:sortedArray];
-            [temp insertObject:node atIndex:midpoint];
-            [temp replaceObjectsInRange:NSMakeRange(midpoint, [sortedArray count]) withObjectsFromArray:sortedArray range:NSMakeRange(midpoint, [sortedArray count])];
+            [temp insertObject:node atIndex:midArray];
             [sortedArray setArray:temp];
             temp = nil;
             break;
@@ -117,6 +125,16 @@ NSArray *arrayOfText;
     
     
 }
+
+#pragma -Gathering information for sorted array-
+-(NSUInteger)getPositionInArray:(NSMutableArray *)sortedArray forLength:(int)nodeLength{
+    unsigned int index = 0;
+    while(nodeLength <= ((Nodes *)sortedArray[index]).length) {
+            index++;
+    }
+    return index;
+}
+
 
 #pragma -Forwarding Data to the TableView-
 +(NSUInteger)arraySize{
