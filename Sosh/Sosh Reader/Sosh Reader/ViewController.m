@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Nodes.h"
+#import "ListViewController.h"
 
 @interface ViewController ()
 
@@ -33,7 +34,7 @@ NSArray *arrayOfText;
 - (IBAction)sortText:(id)sender {
     //Creates array of text to be sorted if it doesn't exist
     if (!arrayOfText) {
-        NSString *readText = [NSString stringWithContentsOfFile:@"Sonnet 1.rtf" encoding:NSASCIIStringEncoding error:nil];
+        NSString *readText = [NSString stringWithContentsOfFile:@"/Users/davidaghassi/GitHub/Xcode/Sosh/Sosh Reader/Sosh Reader/Files/Sonnet 1.txt" encoding:NSUTF8StringEncoding error:NULL];
         arrayOfText = [readText componentsSeparatedByString:@"\n"];
         
     }
@@ -42,15 +43,13 @@ NSArray *arrayOfText;
     //Going to work with a version of mergesort, but with a mutable array
     //I will divide the array to the point where the node I am going to insert fits
     //Then I will insert said node using the "insertAtIndex" function
-    if (!sortedArray) {
-        sortedArray = [[NSMutableArray alloc]init];
-    }
+    [self sortByLength:arrayOfText];
     
 }
 
 
 //Sorts the array passed into it, and stores it to sortedArray
--(void)sortByLength:(NSMutableArray *)arrayToBeSorted{
+-(void)sortByLength:(NSArray *)arrayToBeSorted{
     //Grabs each line from the text file
     //Stores the line with the length in a node
     //Sorts the nodes by their length
@@ -60,8 +59,9 @@ NSArray *arrayOfText;
         textNode.length = [arrayToBeSorted[index] length];
         
         //Created the list if it doesn't exist
-        if (!sortedArray[0]) {
-            [sortedArray insertObject:textNode atIndex:index];
+        if (!sortedArray) {
+            sortedArray = [[NSMutableArray alloc]initWithObjects:textNode, nil];
+            NSLog(@"%@", ((Nodes *)sortedArray[0]).line);
         }
         
         //Creates a temp array with the new highest node in the first place
@@ -81,7 +81,7 @@ NSArray *arrayOfText;
             //Recursively call break down function
             //Use binary search to find the area where the new
             //Node needs to be inserted
-            
+            [self findPositionIn:sortedArray forObject:textNode];
         }
         
     }
@@ -90,9 +90,47 @@ NSArray *arrayOfText;
 
 //Inserts the object in the proper place of the sortedArray
 -(void)findPositionIn:(NSMutableArray *)array forObject:(Nodes *)node{
-    if (<#condition#>) {
-        <#statements#>
+    int longest = ((Nodes *)sortedArray[0]).length;
+    int shortest = ((Nodes *)[sortedArray lastObject]).length;
+    while (longest>=shortest) {
+        int midpoint = (longest + shortest)/2;
+        if (node.length > midpoint) {
+            shortest = midpoint - 1;
+        }
+        else if(node.length < midpoint){
+            longest = midpoint + 1;
+        }
+        else{
+            //Assign the beginning of the array to the midpoint
+            //into a temp array.
+            //then use the replaceObjectsInRange function to fill the end of the array
+            NSMutableArray *temp = [[NSMutableArray alloc]init];
+            [temp setArray:sortedArray];
+            [temp insertObject:node atIndex:midpoint];
+            [temp replaceObjectsInRange:NSMakeRange(midpoint, [sortedArray count]) withObjectsFromArray:sortedArray range:NSMakeRange(midpoint, [sortedArray count])];
+            [sortedArray setArray:temp];
+            temp = nil;
+            break;
+            NSLog(@"%@", sortedArray);
+        }
     }
     
+    
+}
+
+#pragma -Forwarding Data to the TableView-
++(NSUInteger)arraySize{
+    return [sortedArray count];
+}
+
++(NSMutableArray *)returnSortedArray{
+    return sortedArray;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"showData"]) {
+        ListViewController *listView = segue.destinationViewController;
+        [listView.delegate self];
+    }
 }
 @end

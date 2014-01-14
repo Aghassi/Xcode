@@ -21,8 +21,9 @@
 		D467B4451884C2FA00082149 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467B4271884C2FA00082149 /* UIKit.framework */; };
 		D467B44D1884C2FA00082149 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D467B44B1884C2FA00082149 /* InfoPlist.strings */; };
 		D467B44F1884C2FA00082149 /* Sosh_ReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D467B44E1884C2FA00082149 /* Sosh_ReaderTests.m */; };
-		D467B45A1884C53A00082149 /* Sonnet 1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D467B4591884C53A00082149 /* Sonnet 1.rtf */; };
 		D467B45D1884C5AB00082149 /* Nodes.m in Sources */ = {isa = PBXBuildFile; fileRef = D467B45C1884C5AB00082149 /* Nodes.m */; };
+		D467B4611884D88800082149 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D467B4601884D88800082149 /* ListViewController.m */; };
+		D467B4631884E1A500082149 /* Sonnet 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = D467B4621884E1A500082149 /* Sonnet 1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +56,11 @@
 		D467B44A1884C2FA00082149 /* Sosh ReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sosh ReaderTests-Info.plist"; sourceTree = "<group>"; };
 		D467B44C1884C2FA00082149 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D467B44E1884C2FA00082149 /* Sosh_ReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sosh_ReaderTests.m; sourceTree = "<group>"; };
-		D467B4591884C53A00082149 /* Sonnet 1.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "Sonnet 1.rtf"; path = "Files/Sonnet 1.rtf"; sourceTree = "<group>"; };
 		D467B45B1884C5AB00082149 /* Nodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Nodes.h; path = Modals/Nodes.h; sourceTree = "<group>"; };
 		D467B45C1884C5AB00082149 /* Nodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Nodes.m; path = Modals/Nodes.m; sourceTree = "<group>"; };
+		D467B45F1884D88800082149 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = Controllers/ListViewController.h; sourceTree = "<group>"; };
+		D467B4601884D88800082149 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewController.m; path = Controllers/ListViewController.m; sourceTree = "<group>"; };
+		D467B4621884E1A500082149 /* Sonnet 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Sonnet 1.txt"; path = "Files/Sonnet 1.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,12 +120,12 @@
 		D467B4291884C2FA00082149 /* Sosh Reader */ = {
 			isa = PBXGroup;
 			children = (
+				D467B4621884E1A500082149 /* Sonnet 1.txt */,
 				D467B45E1884C5B000082149 /* Model */,
 				D467B4581884C30A00082149 /* Controllers */,
 				D467B4321884C2FA00082149 /* AppDelegate.h */,
 				D467B4331884C2FA00082149 /* AppDelegate.m */,
 				D467B4351884C2FA00082149 /* Main.storyboard */,
-				D467B4591884C53A00082149 /* Sonnet 1.rtf */,
 				D467B43B1884C2FA00082149 /* Images.xcassets */,
 				D467B42A1884C2FA00082149 /* Supporting Files */,
 			);
@@ -163,6 +166,8 @@
 			children = (
 				D467B4381884C2FA00082149 /* ViewController.h */,
 				D467B4391884C2FA00082149 /* ViewController.m */,
+				D467B45F1884D88800082149 /* ListViewController.h */,
+				D467B4601884D88800082149 /* ListViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -254,7 +259,7 @@
 			files = (
 				D467B43C1884C2FA00082149 /* Images.xcassets in Resources */,
 				D467B42E1884C2FA00082149 /* InfoPlist.strings in Resources */,
-				D467B45A1884C53A00082149 /* Sonnet 1.rtf in Resources */,
+				D467B4631884E1A500082149 /* Sonnet 1.txt in Resources */,
 				D467B4371884C2FA00082149 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D467B4611884D88800082149 /* ListViewController.m in Sources */,
 				D467B43A1884C2FA00082149 /* ViewController.m in Sources */,
 				D467B4341884C2FA00082149 /* AppDelegate.m in Sources */,
 				D467B4301884C2FA00082149 /* main.m in Sources */,

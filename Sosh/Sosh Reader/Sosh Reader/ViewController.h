@@ -11,4 +11,7 @@
 @interface ViewController : UIViewController
 - (IBAction)sortText:(id)sender;
 
++(NSUInteger)arraySize;
++(NSMutableArray *)returnSortedArray;
+
 @end
