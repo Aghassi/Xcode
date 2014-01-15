@@ -32,6 +32,12 @@
     //Setup the cell..
     cell.textLabel.text = [NSString stringWithFormat:@"%d: %@", ((Nodes *)[[ViewController returnSortedArray]objectAtIndex:(NSUInteger)indexPath.row]).length, ((Nodes *)[[ViewController returnSortedArray]objectAtIndex:(NSUInteger)indexPath.row]).line];
     NSLog(@"%d: %@", ((Nodes *)[[ViewController returnSortedArray]objectAtIndex:(NSUInteger)indexPath.row]).length, ((Nodes *)[[ViewController returnSortedArray]objectAtIndex:(NSUInteger)indexPath.row]).line);
+    
     return cell;
 }
+
+- (IBAction)userIsDone:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

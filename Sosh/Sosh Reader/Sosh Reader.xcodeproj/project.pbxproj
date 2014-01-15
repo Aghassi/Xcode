@@ -492,6 +492,7 @@
 				D467B4541884C2FA00082149 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D467B4551884C2FA00082149 /* Build configuration list for PBXNativeTarget "Sosh ReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +501,7 @@
 				D467B4571884C2FA00082149 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
