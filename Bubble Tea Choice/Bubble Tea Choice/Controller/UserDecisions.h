@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FlavorViewController.h"
 
 @protocol updateUIDelegate <NSObject>
 
@@ -20,8 +21,7 @@
 
 @end
 
-@interface UserDecisions : NSObject
-
+@interface UserDecisions : NSObject <FlavorViewControllerDelegate>
 //UI Delegate
 @property(nonatomic, strong)id<updateUIDelegate> delegate;
 
@@ -31,11 +31,18 @@
 //Overrides init
 -(id) init;
 
+#pragma -UI Calls-
+
 //Update the ui on screen
 -(void)updateUI:(NSString *)answer;
 
 //Called when the back, true, or false buttons is pressed
 -(void)updateButtonsAndText;
+
+//Populates return options with proper options
+-(void)gatherChoices;
+
+#pragma -Updating Answers-
 
 //Updates the answers chosen. Called by updateUI.
 -(void)addAnswer:(NSString *)answer;
@@ -45,5 +52,7 @@
 
 //Removes all objects from answers
 -(void)resetAnswers;
+
++(NSArray *)returnFlavorsOptions;
 
 @end

@@ -1,19 +1,18 @@
 //
 //  AppDelegate.m
-//  Bubble Tea Choice
+//  Sosh Reader
 //
-//  Created by David Aghassi on 1/4/14.
+//  Created by David Aghassi on 1/13/14.
 //  Copyright (c) 2014 Aghassi. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "FlavorViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.    
+    // Override point for customization after application launch.
     return YES;
 }
 							

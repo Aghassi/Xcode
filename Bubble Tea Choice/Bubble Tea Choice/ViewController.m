@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "UserDecisions.h"
 
+
 @interface ViewController ()
 
 @end
@@ -58,6 +59,7 @@ NSMutableArray *choicesArray;
     [_choicesText setHidden:false];
     [_backButton setHidden:true];
     [_resetButton setHidden:true];
+    [_finalizeButton setHidden:true];
     
     //Set the answer count and children count
     //Reset answer choices list.
@@ -89,9 +91,10 @@ NSMutableArray *choicesArray;
 -(void)hideAll{
     [_trueButton setHidden:true];
     [_falseButton setHidden:true];
-    [_choicesText setHidden:true];
     [_backButton setHidden:true];
     [_resetButton setHidden:false];
+    [_finalizeButton setHidden:false];
+    
 }
 
 //Makes back button visible
@@ -138,6 +141,16 @@ NSMutableArray *choicesArray;
     [choicesArray removeLastObject];
     [_choicesText setText:[NSString stringWithFormat:@"%@", [choicesArray componentsJoinedByString:@","]]];
     
+}
+
+#pragma - Flavor View Controller Delegate -
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"FlavorViewController"]) {
+        FlavorViewController *flavorViewController = segue.destinationViewController;
+        flavorViewController.delegate = self;
+    }
 }
 
 @end

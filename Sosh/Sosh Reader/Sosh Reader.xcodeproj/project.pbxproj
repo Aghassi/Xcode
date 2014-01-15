@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D467B4241884C2FA00082149 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467B4231884C2FA00082149 /* Foundation.framework */; };
+		D467B4261884C2FA00082149 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467B4251884C2FA00082149 /* CoreGraphics.framework */; };
+		D467B4281884C2FA00082149 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467B4271884C2FA00082149 /* UIKit.framework */; };
+		D467B42E1884C2FA00082149 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D467B42C1884C2FA00082149 /* InfoPlist.strings */; };
+		D467B4301884C2FA00082149 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D467B42F1884C2FA00082149 /* main.m */; };
+		D467B4341884C2FA00082149 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D467B4331884C2FA00082149 /* AppDelegate.m */; };
+		D467B4371884C2FA00082149 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D467B4351884C2FA00082149 /* Main.storyboard */; };
+		D467B43A1884C2FA00082149 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D467B4391884C2FA00082149 /* ViewController.m */; };
+		D467B43C1884C2FA00082149 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D467B43B1884C2FA00082149 /* Images.xcassets */; };
+		D467B4431884C2FA00082149 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467B4421884C2FA00082149 /* XCTest.framework */; };
+		D467B4441884C2FA00082149 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467B4231884C2FA00082149 /* Foundation.framework */; };
+		D467B4451884C2FA00082149 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D467B4271884C2FA00082149 /* UIKit.framework */; };
+		D467B44D1884C2FA00082149 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D467B44B1884C2FA00082149 /* InfoPlist.strings */; };
+		D467B44F1884C2FA00082149 /* Sosh_ReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D467B44E1884C2FA00082149 /* Sosh_ReaderTests.m */; };
+		D467B45D1884C5AB00082149 /* Nodes.m in Sources */ = {isa = PBXBuildFile; fileRef = D467B45C1884C5AB00082149 /* Nodes.m */; };
+		D467B4611884D88800082149 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D467B4601884D88800082149 /* ListViewController.m */; };
+		D467B4631884E1A500082149 /* Sonnet 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = D467B4621884E1A500082149 /* Sonnet 1.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D467B4461884C2FA00082149 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D467B4181884C2FA00082149 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D467B41F1884C2FA00082149;
+			remoteInfo = "Sosh Reader";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D467B4201884C2FA00082149 /* Sosh Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sosh Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D467B4231884C2FA00082149 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D467B4251884C2FA00082149 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D467B4271884C2FA00082149 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D467B42B1884C2FA00082149 /* Sosh Reader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sosh Reader-Info.plist"; sourceTree = "<group>"; };
+		D467B42D1884C2FA00082149 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D467B42F1884C2FA00082149 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D467B4311884C2FA00082149 /* Sosh Reader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sosh Reader-Prefix.pch"; sourceTree = "<group>"; };
+		D467B4321884C2FA00082149 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D467B4331884C2FA00082149 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D467B4361884C2FA00082149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D467B4381884C2FA00082149 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D467B4391884C2FA00082149 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D467B43B1884C2FA00082149 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D467B4411884C2FA00082149 /* Sosh ReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sosh ReaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D467B4421884C2FA00082149 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D467B44A1884C2FA00082149 /* Sosh ReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sosh ReaderTests-Info.plist"; sourceTree = "<group>"; };
+		D467B44C1884C2FA00082149 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D467B44E1884C2FA00082149 /* Sosh_ReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sosh_ReaderTests.m; sourceTree = "<group>"; };
+		D467B45B1884C5AB00082149 /* Nodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Nodes.h; path = Modals/Nodes.h; sourceTree = "<group>"; };
+		D467B45C1884C5AB00082149 /* Nodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Nodes.m; path = Modals/Nodes.m; sourceTree = "<group>"; };
+		D467B45F1884D88800082149 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = Controllers/ListViewController.h; sourceTree = "<group>"; };
+		D467B4601884D88800082149 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewController.m; path = Controllers/ListViewController.m; sourceTree = "<group>"; };
+		D467B4621884E1A500082149 /* Sonnet 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Sonnet 1.txt"; path = "Files/Sonnet 1.txt"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D467B41D1884C2FA00082149 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D467B4261884C2FA00082149 /* CoreGraphics.framework in Frameworks */,
+				D467B4281884C2FA00082149 /* UIKit.framework in Frameworks */,
+				D467B4241884C2FA00082149 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D467B43E1884C2FA00082149 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D467B4431884C2FA00082149 /* XCTest.framework in Frameworks */,
+				D467B4451884C2FA00082149 /* UIKit.framework in Frameworks */,
+				D467B4441884C2FA00082149 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D467B4171884C2FA00082149 = {
+			isa = PBXGroup;
+			children = (
+				D467B4291884C2FA00082149 /* Sosh Reader */,
+				D467B4481884C2FA00082149 /* Sosh ReaderTests */,
+				D467B4221884C2FA00082149 /* Frameworks */,
+				D467B4211884C2FA00082149 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D467B4211884C2FA00082149 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D467B4201884C2FA00082149 /* Sosh Reader.app */,
+				D467B4411884C2FA00082149 /* Sosh ReaderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D467B4221884C2FA00082149 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D467B4231884C2FA00082149 /* Foundation.framework */,
+				D467B4251884C2FA00082149 /* CoreGraphics.framework */,
+				D467B4271884C2FA00082149 /* UIKit.framework */,
+				D467B4421884C2FA00082149 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D467B4291884C2FA00082149 /* Sosh Reader */ = {
+			isa = PBXGroup;
+			children = (
+				D467B4621884E1A500082149 /* Sonnet 1.txt */,
+				D467B45E1884C5B000082149 /* Model */,
+				D467B4581884C30A00082149 /* Controllers */,
+				D467B4321884C2FA00082149 /* AppDelegate.h */,
+				D467B4331884C2FA00082149 /* AppDelegate.m */,
+				D467B4351884C2FA00082149 /* Main.storyboard */,
+				D467B43B1884C2FA00082149 /* Images.xcassets */,
+				D467B42A1884C2FA00082149 /* Supporting Files */,
+			);
+			path = "Sosh Reader";
+			sourceTree = "<group>";
+		};
+		D467B42A1884C2FA00082149 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D467B42B1884C2FA00082149 /* Sosh Reader-Info.plist */,
+				D467B42C1884C2FA00082149 /* InfoPlist.strings */,
+				D467B42F1884C2FA00082149 /* main.m */,
+				D467B4311884C2FA00082149 /* Sosh Reader-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D467B4481884C2FA00082149 /* Sosh ReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				D467B44E1884C2FA00082149 /* Sosh_ReaderTests.m */,
+				D467B4491884C2FA00082149 /* Supporting Files */,
+			);
+			path = "Sosh ReaderTests";
+			sourceTree = "<group>";
+		};
+		D467B4491884C2FA00082149 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D467B44A1884C2FA00082149 /* Sosh ReaderTests-Info.plist */,
+				D467B44B1884C2FA00082149 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D467B4581884C30A00082149 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D467B4381884C2FA00082149 /* ViewController.h */,
+				D467B4391884C2FA00082149 /* ViewController.m */,
+				D467B45F1884D88800082149 /* ListViewController.h */,
+				D467B4601884D88800082149 /* ListViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D467B45E1884C5B000082149 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D467B45B1884C5AB00082149 /* Nodes.h */,
+				D467B45C1884C5AB00082149 /* Nodes.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D467B41F1884C2FA00082149 /* Sosh Reader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D467B4521884C2FA00082149 /* Build configuration list for PBXNativeTarget "Sosh Reader" */;
+			buildPhases = (
+				D467B41C1884C2FA00082149 /* Sources */,
+				D467B41D1884C2FA00082149 /* Frameworks */,
+				D467B41E1884C2FA00082149 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sosh Reader";
+			productName = "Sosh Reader";
+			productReference = D467B4201884C2FA00082149 /* Sosh Reader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D467B4401884C2FA00082149 /* Sosh ReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D467B4551884C2FA00082149 /* Build configuration list for PBXNativeTarget "Sosh ReaderTests" */;
+			buildPhases = (
+				D467B43D1884C2FA00082149 /* Sources */,
+				D467B43E1884C2FA00082149 /* Frameworks */,
+				D467B43F1884C2FA00082149 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D467B4471884C2FA00082149 /* PBXTargetDependency */,
+			);
+			name = "Sosh ReaderTests";
+			productName = "Sosh ReaderTests";
+			productReference = D467B4411884C2FA00082149 /* Sosh ReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D467B4181884C2FA00082149 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Aghassi;
+				TargetAttributes = {
+					D467B4401884C2FA00082149 = {
+						TestTargetID = D467B41F1884C2FA00082149;
+					};
+				};
+			};
+			buildConfigurationList = D467B41B1884C2FA00082149 /* Build configuration list for PBXProject "Sosh Reader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D467B4171884C2FA00082149;
+			productRefGroup = D467B4211884C2FA00082149 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D467B41F1884C2FA00082149 /* Sosh Reader */,
+				D467B4401884C2FA00082149 /* Sosh ReaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D467B41E1884C2FA00082149 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D467B43C1884C2FA00082149 /* Images.xcassets in Resources */,
+				D467B42E1884C2FA00082149 /* InfoPlist.strings in Resources */,
+				D467B4631884E1A500082149 /* Sonnet 1.txt in Resources */,
+				D467B4371884C2FA00082149 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D467B43F1884C2FA00082149 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D467B44D1884C2FA00082149 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D467B41C1884C2FA00082149 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D467B4611884D88800082149 /* ListViewController.m in Sources */,
+				D467B43A1884C2FA00082149 /* ViewController.m in Sources */,
+				D467B4341884C2FA00082149 /* AppDelegate.m in Sources */,
+				D467B4301884C2FA00082149 /* main.m in Sources */,
+				D467B45D1884C5AB00082149 /* Nodes.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D467B43D1884C2FA00082149 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D467B44F1884C2FA00082149 /* Sosh_ReaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D467B4471884C2FA00082149 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D467B41F1884C2FA00082149 /* Sosh Reader */;
+			targetProxy = D467B4461884C2FA00082149 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D467B42C1884C2FA00082149 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D467B42D1884C2FA00082149 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D467B4351884C2FA00082149 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D467B4361884C2FA00082149 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D467B44B1884C2FA00082149 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D467B44C1884C2FA00082149 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D467B4501884C2FA00082149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D467B4511884C2FA00082149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D467B4531884C2FA00082149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sosh Reader/Sosh Reader-Prefix.pch";
+				INFOPLIST_FILE = "Sosh Reader/Sosh Reader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D467B4541884C2FA00082149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sosh Reader/Sosh Reader-Prefix.pch";
+				INFOPLIST_FILE = "Sosh Reader/Sosh Reader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D467B4561884C2FA00082149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sosh Reader.app/Sosh Reader";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sosh Reader/Sosh Reader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sosh ReaderTests/Sosh ReaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D467B4571884C2FA00082149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sosh Reader.app/Sosh Reader";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sosh Reader/Sosh Reader-Prefix.pch";
+				INFOPLIST_FILE = "Sosh ReaderTests/Sosh ReaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D467B41B1884C2FA00082149 /* Build configuration list for PBXProject "Sosh Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D467B4501884C2FA00082149 /* Debug */,
+				D467B4511884C2FA00082149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D467B4521884C2FA00082149 /* Build configuration list for PBXNativeTarget "Sosh Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D467B4531884C2FA00082149 /* Debug */,
+				D467B4541884C2FA00082149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D467B4551884C2FA00082149 /* Build configuration list for PBXNativeTarget "Sosh ReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D467B4561884C2FA00082149 /* Debug */,
+				D467B4571884C2FA00082149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D467B4181884C2FA00082149 /* Project object */;
+}

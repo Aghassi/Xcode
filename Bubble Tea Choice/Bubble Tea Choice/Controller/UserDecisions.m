@@ -12,7 +12,10 @@
 
 @implementation UserDecisions{
     NSMutableArray *answers;
+    //Options to be returned when user is ready to finalize
 }
+
+NSArray *returnChoices=nil;
 
 //Overrides the init method to define instance variables
 -(id)init{
@@ -44,9 +47,11 @@
     self.childrenCount = (_childrenCount * 2)+1;
     
     //If less sweet or more sweet, show answers
-    if([ answer isEqualToString:@"Less Sweet"] || [answer isEqualToString:@"More Sweet"]){
+    if([answer isEqualToString:@"Less Sweet"] || [answer isEqualToString:@"More Sweet"]){
         //Hide all
         [self.delegate hideAll];
+        [self.delegate updateChoices:answer];
+        [self gatherChoices];
         
     }
     else if ([Choices mainOptionsContains:answer]){
@@ -55,6 +60,8 @@
          */
         if([answer isEqualToString:[Choices getMainOptionAtIndex:6]]){
             [self.delegate hideAll];
+            [self.delegate updateChoices:answer];
+            [self gatherChoices];
         }
         
         /*
@@ -81,6 +88,39 @@
                                  [Choices getMainOptionAtIndex:self.childrenCount +1]]];
 }
 
+
+//Method retrives the answers to be displayed on screen
+-(void)gatherChoices{
+    //Initializes answers, and the dictionary.
+    [Choices initializeAnswers];
+    
+    NSString *treePathNumber;
+    //See if you can get a smaller capacity in future
+    NSMutableString *builder = [[NSMutableString alloc]init];
+    
+    //Loops through the array, getting the number in each node
+    //Builds the tree index for which the answer will be looked up.
+    //0 is left, 1 is right
+    for (int index = 0; index< [answers count]; index++) {
+        [builder appendString:[[NSString stringWithFormat:@"%d", [answers[index] number]]init]];
+        NSLog(@"%d",[answers[index] number]);
+    }
+    //Assigns the string built to the treepath so we can look it up
+    //Unnecessary, can be removed later for memory overhead.
+    treePathNumber = [builder description];
+    
+    //Settiing builder to nil since we no longer need it, let ARC dealloc it
+    builder = nil;
+    
+    if ([Choices containsKey:treePathNumber]) {
+        returnChoices = [Choices getNodeForKey:treePathNumber];
+        NSLog(@"%@", returnChoices);
+    }
+   
+}
+
+#pragma -Updating Answers-
+
 //Adds an answer to the NSMutableList to be looked up at the end
 //Of the decision cycle
 -(void)addAnswer:(NSString *)answer{
@@ -94,6 +134,10 @@
         if ([answer isEqualToString:[Choices getMainOption:answer]]) {
             //Gets the index of the answer
             index = [Choices getIndexOfMainOption:answer];
+            
+            if ([answers[0] isEqualToString:@"No Milk"]) {
+                index = 5;
+            }
             
             //Checks if it is an even or odd index
             //Checks that it isn't an answer we already went through
@@ -137,5 +181,11 @@
     [answers removeAllObjects];
     //NSLog(@"Answers have been reset %@", answers);
 }
+
+#pragma -TableView Methods_
++(NSArray *)returnFlavorsOptions{
+    return returnChoices;
+}
+
 
 @end

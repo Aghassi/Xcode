@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "UserDecisions.h"
+#import "FlavorViewController.h"
 
-@interface ViewController : UIViewController <updateUIDelegate>;
+
+@interface ViewController : UIViewController <updateUIDelegate, FlavorViewControllerDelegate>;
 //Buttons for choices
 - (IBAction)trueButton:(id)sender;
 - (IBAction)falseButton:(id)sender;
@@ -23,9 +25,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *falseButton;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
+@property (weak, nonatomic) IBOutlet UIButton *finalizeButton;
 
 //Outlets for TextFields
-@property (weak, nonatomic) IBOutlet UITextField *outputText;
+@property (weak, nonatomic) IBOutlet UITextView *outputText;
 @property (weak, nonatomic) IBOutlet UITextField *choicesText;
 @property (weak, nonatomic) IBOutlet UILabel *choicesLabel;
 
