@@ -34,6 +34,7 @@ NSArray *arrayOfText;
 - (IBAction)sortText:(id)sender {
     //Creates array of text to be sorted if it doesn't exist
     if (!arrayOfText) {
+#warning UPDATE THIS LINE WITH THE PROPER FILE PATH
         NSString *readText = [NSString stringWithContentsOfFile:@"/Users/davidaghassi/GitHub/Xcode/Sosh/Sosh Reader/Sosh Reader/Files/Sonnet 1.txt" encoding:NSUTF8StringEncoding error:NULL];
         arrayOfText = [readText componentsSeparatedByString:@"\n"];
         
