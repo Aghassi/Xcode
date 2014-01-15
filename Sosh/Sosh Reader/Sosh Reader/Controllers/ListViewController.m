@@ -8,10 +8,15 @@
 
 #import "ListViewController.h"
 #import "ViewController.h"
+#import "Nodes.h"
 
 @implementation ListViewController
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [ViewController arraySize];
 }
 
@@ -25,7 +30,8 @@
     }
     
     //Setup the cell..
-    cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", [[ViewController returnSortedArray]objectAtIndex:indexPath.row], [[ViewController returnSortedArray]objectAtIndex:indexPath.length]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d: %@", ((Nodes *)[[ViewController returnSortedArray]objectAtIndex:(NSUInteger)indexPath.row]).length, ((Nodes *)[[ViewController returnSortedArray]objectAtIndex:(NSUInteger)indexPath.row]).line];
+    NSLog(@"%d: %@", ((Nodes *)[[ViewController returnSortedArray]objectAtIndex:(NSUInteger)indexPath.row]).length, ((Nodes *)[[ViewController returnSortedArray]objectAtIndex:(NSUInteger)indexPath.row]).line);
     return cell;
 }
 @end

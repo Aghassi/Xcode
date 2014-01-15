@@ -14,7 +14,9 @@
 
 @end
 
-@interface ListViewController : UITableViewController  <UITableViewDataSource, UITableViewDelegate>
+@interface ListViewController : UIViewController  <UITableViewDataSource, UITableViewDelegate>{
+    IBOutlet UITableView *textView;
+}
 
 @property(nonatomic, weak) id<ListViewControllerDelegate> delegate;
 

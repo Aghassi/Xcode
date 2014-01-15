@@ -53,7 +53,7 @@ NSArray *arrayOfText;
     //Grabs each line from the text file
     //Stores the line with the length in a node
     //Sorts the nodes by their length
-    for(int index = 0; index <= [arrayToBeSorted count];index++){
+    for(int index = 0; index < [arrayToBeSorted count];index++){
         Nodes *textNode = [[Nodes alloc]init];
         textNode.line = arrayToBeSorted[index];
         textNode.length = [arrayToBeSorted[index] length];

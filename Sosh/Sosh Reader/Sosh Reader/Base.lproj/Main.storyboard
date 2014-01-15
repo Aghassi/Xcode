@@ -24,7 +24,7 @@
                                 </state>
                                 <connections>
                                     <action selector="sortText:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Lv9-8v-2eo"/>
-                                    <segue destination="2nF-g2-7zu" kind="modal" identifier="showData" id="8qQ-kr-pkT"/>
+                                    <segue destination="dzb-VP-P0m" kind="modal" identifier="showData" id="qS8-i0-1SK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -35,33 +35,46 @@
             </objects>
         </scene>
         <!--List View Controller-->
-        <scene sceneID="bma-Zb-U77">
+        <scene sceneID="nml-pR-aux">
             <objects>
-                <tableViewController id="2nF-g2-7zu" customClass="ListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rkD-Zk-YAF">
+                <viewController id="dzb-VP-P0m" customClass="ListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Qu-Vf-wQd"/>
+                        <viewControllerLayoutGuide type="bottom" id="UU7-eD-Oh3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fTY-ZN-eIT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tfH-Lf-SQq">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tfH-Lf-SQq" id="b73-k2-Q1y">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="2nF-g2-7zu" id="1Ll-hD-Tfx"/>
-                            <outlet property="delegate" destination="2nF-g2-7zu" id="PrT-4O-Rwr"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="aRt-BT-ZK7"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hBM-y1-rlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pQe-Bj-Lbj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="M1c-Ws-Gfe">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M1c-Ws-Gfe" id="gWP-vo-gMV">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dzb-VP-P0m" id="Lw8-IF-eRE"/>
+                                    <outlet property="delegate" destination="dzb-VP-P0m" id="RuX-I7-31K"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="pQe-Bj-Lbj" id="Hcn-ny-0EZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DsV-Xg-fOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="689" y="109"/>
+            <point key="canvasLocation" x="905" y="-37"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
