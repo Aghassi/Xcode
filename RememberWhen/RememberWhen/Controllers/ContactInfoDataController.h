@@ -11,7 +11,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class ContactInfo.h;
+@class ContactInfo;
 
 @interface ContactInfoDataController : NSObject
 
