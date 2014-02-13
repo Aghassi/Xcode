@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ContactInfoDataController;
+
 
 @interface MasterViewController : UITableViewController
+
+@property(strong, nonatomic)ContactInfoDataController *dataController;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ContactInfo.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -16,15 +17,15 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+- (void)setContactInfo:(ContactInfo *) newContactInfo{
+    if (_info != newContactInfo) {
+        _info = newContactInfo;
         
-        // Update the view.
+        //Update the view.
         [self configureView];
     }
 }
+
 
 - (void)configureView
 {
