@@ -15,8 +15,7 @@
 
 //Information regarding the new contact being added
 @property (weak, nonatomic) IBOutlet UILabel *contactNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UIImage *imageLabel;
+@property (weak, nonatomic) IBOutlet CIImage *imageLabel;
 
 @end

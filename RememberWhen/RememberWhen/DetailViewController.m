@@ -30,9 +30,20 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+    ContactInfo *theContactInfo = self.info;
+    
+    static NSDateFormatter *formatter = nil;
+    if (formatter == nil) {
+        formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateStyle:NSDateFormatterMediumStyle];
+    }
+    
+    if (theContactInfo) {
+        self.contactNameLabel.text = theContactInfo.name;
+        self.imageLabel = theContactInfo.picture;
+        self.dateLabel.text = [formatter stringFromDate:(NSDate *)theContactInfo.date];
+        
+        
     }
 }
 
