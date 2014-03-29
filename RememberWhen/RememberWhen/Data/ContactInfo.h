@@ -7,16 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface ContactInfo : NSObject
+@interface ContactInfo : UIViewController <ABPeoplePickerNavigationControllerDelegate>{
+}
 
 //Name and picture to be copied from contact info
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, copy) CIImage *picture;
 @property (nonatomic, strong) NSDate *date;
 
-//Init method for this model
--(id)initWithName: (NSString *)name picture:(CIImage *)picture time: (NSDate *)date;
+-(IBAction)showPicker:(id)sender;
 
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D45FF82618E66D1700777234 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45FF82518E66D1700777234 /* AddressBook.framework */; };
+		D45FF82E18E67EA200777234 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45FF82D18E67EA200777234 /* AddressBookUI.framework */; };
 		D4772E0518ABBE7400016FAF /* ContactInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D4772E0418ABBE7400016FAF /* ContactInfo.m */; };
 		D4772E0818ABDBA300016FAF /* ContactInfoDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4772E0718ABDBA300016FAF /* ContactInfoDataController.m */; };
 		D4C2B48018AAAF1800A23EB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C2B47F18AAAF1800A23EB9 /* Foundation.framework */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D45FF82518E66D1700777234 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		D45FF82D18E67EA200777234 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		D4772E0318ABBE7400016FAF /* ContactInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactInfo.h; path = Data/ContactInfo.h; sourceTree = "<group>"; };
 		D4772E0418ABBE7400016FAF /* ContactInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactInfo.m; path = Data/ContactInfo.m; sourceTree = "<group>"; };
 		D4772E0618ABDBA300016FAF /* ContactInfoDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactInfoDataController.h; path = Controllers/ContactInfoDataController.h; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45FF82E18E67EA200777234 /* AddressBookUI.framework in Frameworks */,
+				D45FF82618E66D1700777234 /* AddressBook.framework in Frameworks */,
 				D4C2B48218AAAF1800A23EB9 /* CoreGraphics.framework in Frameworks */,
 				D4C2B48418AAAF1800A23EB9 /* UIKit.framework in Frameworks */,
 				D4C2B48018AAAF1800A23EB9 /* Foundation.framework in Frameworks */,
@@ -148,6 +154,8 @@
 		D4C2B47E18AAAF1800A23EB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D45FF82D18E67EA200777234 /* AddressBookUI.framework */,
+				D45FF82518E66D1700777234 /* AddressBook.framework */,
 				D4C2B47F18AAAF1800A23EB9 /* Foundation.framework */,
 				D4C2B48118AAAF1800A23EB9 /* CoreGraphics.framework */,
 				D4C2B48318AAAF1800A23EB9 /* UIKit.framework */,
@@ -243,7 +251,7 @@
 		D4C2B47418AAAF1800A23EB9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Aghassi;
 				TargetAttributes = {
 					D4C2B49F18AAAF1800A23EB9 = {
@@ -355,7 +363,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -394,7 +401,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -452,7 +458,6 @@
 		D4C2B4B518AAAF1800A23EB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RememberWhen.app/RememberWhen";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -475,7 +480,6 @@
 		D4C2B4B618AAAF1800A23EB9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RememberWhen.app/RememberWhen";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

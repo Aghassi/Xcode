@@ -10,19 +10,36 @@
 
 @implementation ContactInfo
 
-//Adds name and picture to the property.
--(id)initWithName:(NSString *)name picture:(CIImage *)picture time:(NSDate *)date{
-    self = [super init];
-    if (self) {
-        _name = name;
-        _picture = picture;
-        _date = date;
-        
-        return  self;
-    }
+- (IBAction)showPicker:(id)sender
+{
+    ABPeoplePickerNavigationController *picker =
+    [[ABPeoplePickerNavigationController alloc] init];
+    picker.peoplePickerDelegate = self;
     
-    return nil;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person{
+    _firstName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonFirstNameProperty));
+    _lastName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
+    
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    return NO;
+}
+
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    return NO;
+}
+
+-(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
     
 }
+
+
 
 @end

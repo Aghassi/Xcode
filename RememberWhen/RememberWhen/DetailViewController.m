@@ -39,7 +39,7 @@
     }
     
     if (theContactInfo) {
-        self.contactNameLabel.text = theContactInfo.name;
+        self.contactNameLabel.text = theContactInfo.firstName;
         self.imageLabel = theContactInfo.picture;
         self.dateLabel.text = [formatter stringFromDate:(NSDate *)theContactInfo.date];
         

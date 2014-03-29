@@ -51,6 +51,38 @@
 //    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 //}
 
+#pragma Loading contacts
+- (IBAction)showPicker:(id)sender
+{
+    ABPeoplePickerNavigationController *picker =
+    [[ABPeoplePickerNavigationController alloc] init];
+    picker.peoplePickerDelegate = self;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person{
+    _firstName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonFirstNameProperty));
+    _lastName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
+    
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    return NO;
+}
+
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    return NO;
+}
+
+-(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
+    
+}
+
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -75,7 +107,7 @@
     
     ContactInfo *contactAtIndex = [self.dataController objectInListAtIndex:indexPath.row];
     
-    [[cell textLabel] setText:contactAtIndex.name];
+    [[cell textLabel] setText:contactAtIndex.firstName];
     [[cell detailTextLabel] setText:[formatter stringFromDate:(NSDate *)contactAtIndex.date]];
     return cell;
 }
