@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
 @class ContactInfoDataController;
+@class ArchiveManagerController;
 
 
 @interface MasterViewController : UITableViewController <ABPeoplePickerNavigationControllerDelegate>

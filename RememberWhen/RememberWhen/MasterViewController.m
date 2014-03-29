@@ -10,6 +10,7 @@
 
 #import "DetailViewController.h"
 #import "ContactInfoDataController.h"
+#import "ArchiveManagerController.h"
 
 @interface MasterViewController () {
     ContactInfo *currentContact;
