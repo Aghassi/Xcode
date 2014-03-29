@@ -121,7 +121,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    cell.textLabel.text = [self.dataController objectInListAtIndex:indexPath.row].firstName;
+    cell.textLabel.text = [self.dataController objectInListAtIndex:indexPath.row].lastName;
+    cell.detailTextLabel.text = [self.dataController objectInListAtIndex:indexPath.row].firstName;
     cell.imageView.image = [self.dataController objectInListAtIndex:indexPath.row].picture;
     return cell;
 }
