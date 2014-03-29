@@ -15,10 +15,8 @@
 
 @property(strong, nonatomic)ContactInfoDataController *dataController;
 
-//Name and picture to be copied from contact info
-@property (nonatomic, retain) NSString *firstName;
-@property (nonatomic, retain) NSString *lastName;
-@property (nonatomic, copy) CIImage *picture;
+//picture to be copied from contact info
+@property (nonatomic, copy) UIImage *picture;
 @property (nonatomic, strong) NSDate *date;
 
 //Called to load the contacts to load from

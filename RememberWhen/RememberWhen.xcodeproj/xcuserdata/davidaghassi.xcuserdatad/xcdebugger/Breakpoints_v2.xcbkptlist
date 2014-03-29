@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RememberWhen/MasterViewController.m"
-            timestampString = "417763956.224317"
+            timestampString = "417795134.694429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-peoplePickerNavigationController:shouldContinueAfterSelectingPerson:"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "-updateTableView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

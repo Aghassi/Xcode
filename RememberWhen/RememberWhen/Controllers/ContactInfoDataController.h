@@ -15,13 +15,13 @@
 
 @interface ContactInfoDataController : NSObject
 
-@property (nonatomic, copy) NSMutableArray *masterContactInfoList;
 
 //Methods required to get size,
 //add objects, and get object index
 -(NSUInteger)countOfList;
 -(ContactInfo *)objectInListAtIndex:(NSUInteger)theIndex;
 -(void)addContactInfoWithInfo: (ContactInfo *)info;
+-(NSArray *)returnList;
 
 
 @end

@@ -48,17 +48,14 @@
 }
 
 -(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person{
-    _firstName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonFirstNameProperty));
-    _lastName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
-    
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
     if(!currentContact){
         currentContact = [[ContactInfo alloc]init];
     }
-    currentContact.firstName = _firstName;
-    currentContact.lastName = _lastName;
+    
+    currentContact.firstName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonFirstNameProperty));
+    currentContact.lastName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
+    currentContact.recordID = ABRecordGetRecordID(person);
+    
     currentContact.picture = _picture;
     currentContact.date = _date;
     
@@ -68,6 +65,9 @@
     [self.dataController addContactInfoWithInfo:currentContact];
     
     [self updateTableView];
+
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     
     return NO;
@@ -87,9 +87,13 @@
 
 #pragma mark - Table View
 
+//Called after a person is added to the list
 -(void)updateTableView{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.dataController countOfList]-1 inSection:0];
+    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+    
     [self.tableView beginUpdates];
-    [self.tableView reloadData];
+    [self.tableView insertRowsAtIndexPaths: indexPaths withRowAnimation:UITableViewRowAnimationTop];
     [self.tableView endUpdates];
 }
 
@@ -117,7 +121,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    
+    cell.textLabel.text = [self.dataController objectInListAtIndex:indexPath.row].firstName;
+    cell.imageView.image = [self.dataController objectInListAtIndex:indexPath.row].picture;
     return cell;
 }
 

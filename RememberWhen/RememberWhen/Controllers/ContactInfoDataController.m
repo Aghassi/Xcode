@@ -16,11 +16,11 @@
 @end
 
 @implementation ContactInfoDataController
+NSMutableArray *contactList;
 
+//initializes the data set to be used
 -(void) initializeDefaultDataList{
-    NSMutableArray *contactList = [[NSMutableArray alloc]init];
-    
-    self.masterContactInfoList = contactList;
+     contactList= [[NSMutableArray alloc]init];
 }
 
 -(id)init{
@@ -38,17 +38,22 @@
 
 //Returns length of list
 -(NSUInteger)countOfList{
-    return [self.masterContactInfoList count];
+    return [contactList count];
 }
 
 //Returns the object at a given index
 -(ContactInfo *)objectInListAtIndex: (NSUInteger)index{
-    return [self.masterContactInfoList objectAtIndex:index];
+    return [contactList objectAtIndex:index];
 }
 
 //Adds an contact with info to the list
 -(void)addContactInfoWithInfo:(ContactInfo *)info{
-    [self.masterContactInfoList addObject:info];
+    [contactList addObject:info];
+}
+
+//Returns the list of items
+-(NSArray *)returnList{
+    return  contactList;
 }
 
 @end
