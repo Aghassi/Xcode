@@ -16,11 +16,11 @@
 @end
 
 @implementation ContactInfoDataController
-NSMutableArray *contactList;
+NSMutableDictionary *contactList;
 
 //initializes the data set to be used
 -(void) initializeDefaultDataList{
-     contactList= [[NSMutableArray alloc]init];
+     contactList= [[NSMutableDictionary alloc]init];
 }
 
 -(id)init{
@@ -43,16 +43,26 @@ NSMutableArray *contactList;
 
 //Returns the object at a given index
 -(ContactInfo *)objectInListAtIndex: (NSUInteger)index{
-    return [contactList objectAtIndex:index];
+    NSEnumerator *enumerator = [contactList objectEnumerator];
+    id value;
+    int count = 0;
+    while ((count <= index)) {
+        /* code that acts on the dictionary’s values */
+        value = [enumerator nextObject];
+        count++;
+    }
+    return  value;
 }
 
 //Adds an contact with info to the list
 -(void)addContactInfoWithInfo:(ContactInfo *)info{
-    [contactList addObject:info];
+    if(![contactList objectForKey:[NSNumber numberWithInt:info.recordID]]){
+        [contactList setObject:info forKey:[NSNumber numberWithInt:info.recordID]];
+    }
 }
 
 //Returns the list of items
--(NSArray *)returnList{
+-(NSMutableDictionary *)returnList{
     return  contactList;
 }
 

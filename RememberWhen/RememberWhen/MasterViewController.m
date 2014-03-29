@@ -13,6 +13,7 @@
 
 @interface MasterViewController () {
     ContactInfo *currentContact;
+    NSUInteger lastSize;
 }
 @end
 
@@ -40,9 +41,11 @@
 #pragma Loading contacts
 - (IBAction)showPicker:(id)sender
 {
+    
     ABPeoplePickerNavigationController *picker =
     [[ABPeoplePickerNavigationController alloc] init];
     picker.peoplePickerDelegate = self;
+    
     
     [self presentViewController:picker animated:YES completion:nil];
 }
@@ -54,7 +57,7 @@
     
     currentContact.firstName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonFirstNameProperty));
     currentContact.lastName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
-    currentContact.recordID = ABRecordGetRecordID(person);
+    currentContact.recordID =  ABRecordGetRecordID(person);
     
     currentContact.picture = _picture;
     currentContact.date = _date;
@@ -69,7 +72,7 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    
+    currentContact = nil;
     return NO;
 }
 
@@ -81,7 +84,7 @@
 }
 
 -(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -89,12 +92,16 @@
 
 //Called after a person is added to the list
 -(void)updateTableView{
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.dataController countOfList]-1 inSection:0];
-    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+    if (lastSize<[self.dataController countOfList]) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.dataController countOfList]-1 inSection:0];
+        NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+        
+        [self.tableView beginUpdates];
+        [self.tableView insertRowsAtIndexPaths: indexPaths withRowAnimation:UITableViewRowAnimationTop];
+        [self.tableView endUpdates];
+    }
     
-    [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths: indexPaths withRowAnimation:UITableViewRowAnimationTop];
-    [self.tableView endUpdates];
+    lastSize = [self.dataController countOfList];
 }
 
 //Denotes the number of sections in the table
