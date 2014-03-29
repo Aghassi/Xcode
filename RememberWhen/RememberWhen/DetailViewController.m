@@ -7,7 +7,6 @@
 //
 
 #import "DetailViewController.h"
-#import "ContactInfo.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -30,7 +29,6 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-    ContactInfo *theContactInfo = self.info;
     
     static NSDateFormatter *formatter = nil;
     if (formatter == nil) {
@@ -38,13 +36,6 @@
         [formatter setDateStyle:NSDateFormatterMediumStyle];
     }
     
-    if (theContactInfo) {
-        self.contactNameLabel.text = theContactInfo.firstName;
-        self.imageLabel = theContactInfo.picture;
-        self.dateLabel.text = [formatter stringFromDate:(NSDate *)theContactInfo.date];
-        
-        
-    }
 }
 
 - (void)viewDidLoad

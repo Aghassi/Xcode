@@ -10,10 +10,9 @@
 
 #import "DetailViewController.h"
 #import "ContactInfoDataController.h"
-#import "ContactInfo.h"
 
 @interface MasterViewController () {
-    //NSMutableArray *_objects;
+    ContactInfo *currentContact;
 }
 @end
 
@@ -23,16 +22,12 @@
 {
     [super awakeFromNib];
     self.dataController = [[ContactInfoDataController alloc]init];
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-//
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-//    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,15 +36,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (void)insertNewObject:(id)sender
-//{
-//    if (!_objects) {
-//        _objects = [[NSMutableArray alloc] init];
-//    }
-//    [_objects insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
 
 #pragma Loading contacts
 - (IBAction)showPicker:(id)sender
@@ -68,6 +54,22 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
+    if(!currentContact){
+        currentContact = [[ContactInfo alloc]init];
+    }
+    currentContact.firstName = _firstName;
+    currentContact.lastName = _lastName;
+    currentContact.picture = _picture;
+    currentContact.date = _date;
+    
+    if (!self.dataController) {
+        self.dataController = [[ContactInfoDataController alloc]init];
+    }
+    [self.dataController addContactInfoWithInfo:currentContact];
+    
+    [self updateTableView];
+    
+    
     return NO;
 }
 
@@ -85,16 +87,26 @@
 
 #pragma mark - Table View
 
+-(void)updateTableView{
+    [self.tableView beginUpdates];
+    [self.tableView reloadData];
+    [self.tableView endUpdates];
+}
+
+//Denotes the number of sections in the table
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 
+//Denotes the number of rows in the table view
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.dataController countOfList];
 }
 
+
+//Sets up the table view to show the contact info.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ContactInfoCell";
@@ -105,10 +117,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    ContactInfo *contactAtIndex = [self.dataController objectInListAtIndex:indexPath.row];
     
-    [[cell textLabel] setText:contactAtIndex.firstName];
-    [[cell detailTextLabel] setText:[formatter stringFromDate:(NSDate *)contactAtIndex.date]];
     return cell;
 }
 
@@ -118,31 +127,8 @@
     return NO;
 }
 
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        [_objects removeObjectAtIndex:indexPath.row];
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//    }
-//}
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+//Passes the necessary information from the table cell to the next scene
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

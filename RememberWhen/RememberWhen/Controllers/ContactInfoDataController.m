@@ -7,7 +7,6 @@
 //
 
 #import "ContactInfoDataController.h"
-#import "ContactInfo.h"
 
 //Class extention with private initialize method
 @interface ContactInfoDataController ()

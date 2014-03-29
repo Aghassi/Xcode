@@ -17,10 +17,11 @@
 
 //Name and picture to be copied from contact info
 @property (nonatomic, retain) NSString *firstName;
-@property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, copy) CIImage *picture;
 @property (nonatomic, strong) NSDate *date;
 
+//Called to load the contacts to load from
 -(IBAction)showPicker:(id)sender;
 
 @end

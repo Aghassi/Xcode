@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D45FF82618E66D1700777234 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45FF82518E66D1700777234 /* AddressBook.framework */; };
 		D45FF82E18E67EA200777234 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45FF82D18E67EA200777234 /* AddressBookUI.framework */; };
-		D4772E0518ABBE7400016FAF /* ContactInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D4772E0418ABBE7400016FAF /* ContactInfo.m */; };
+		D45FF83118E68E0100777234 /* ContactInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D45FF83018E68E0100777234 /* ContactInfo.m */; };
 		D4772E0818ABDBA300016FAF /* ContactInfoDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4772E0718ABDBA300016FAF /* ContactInfoDataController.m */; };
 		D4C2B48018AAAF1800A23EB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C2B47F18AAAF1800A23EB9 /* Foundation.framework */; };
 		D4C2B48218AAAF1800A23EB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C2B48118AAAF1800A23EB9 /* CoreGraphics.framework */; };
@@ -41,8 +41,8 @@
 /* Begin PBXFileReference section */
 		D45FF82518E66D1700777234 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		D45FF82D18E67EA200777234 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		D4772E0318ABBE7400016FAF /* ContactInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactInfo.h; path = Data/ContactInfo.h; sourceTree = "<group>"; };
-		D4772E0418ABBE7400016FAF /* ContactInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactInfo.m; path = Data/ContactInfo.m; sourceTree = "<group>"; };
+		D45FF82F18E68E0100777234 /* ContactInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactInfo.h; path = Data/ContactInfo.h; sourceTree = "<group>"; };
+		D45FF83018E68E0100777234 /* ContactInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactInfo.m; path = Data/ContactInfo.m; sourceTree = "<group>"; };
 		D4772E0618ABDBA300016FAF /* ContactInfoDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactInfoDataController.h; path = Controllers/ContactInfoDataController.h; sourceTree = "<group>"; };
 		D4772E0718ABDBA300016FAF /* ContactInfoDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactInfoDataController.m; path = Controllers/ContactInfoDataController.m; sourceTree = "<group>"; };
 		D4C2B47C18AAAF1800A23EB9 /* RememberWhen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RememberWhen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,8 +106,8 @@
 		D4772E0218ABBE2C00016FAF /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D4772E0318ABBE7400016FAF /* ContactInfo.h */,
-				D4772E0418ABBE7400016FAF /* ContactInfo.m */,
+				D45FF82F18E68E0100777234 /* ContactInfo.h */,
+				D45FF83018E68E0100777234 /* ContactInfo.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -304,12 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45FF83118E68E0100777234 /* ContactInfo.m in Sources */,
 				D4C2B49018AAAF1800A23EB9 /* AppDelegate.m in Sources */,
 				D4C2B49618AAAF1800A23EB9 /* MasterViewController.m in Sources */,
 				D4772E0818ABDBA300016FAF /* ContactInfoDataController.m in Sources */,
 				D4C2B48C18AAAF1800A23EB9 /* main.m in Sources */,
 				D4C2B49918AAAF1800A23EB9 /* DetailViewController.m in Sources */,
-				D4772E0518ABBE7400016FAF /* ContactInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

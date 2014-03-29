@@ -7,15 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ContactInfo;
+#import "ContactInfo.h"
 
 @interface DetailViewController : UITableViewController
 
 @property (strong, nonatomic) ContactInfo *info;
 
-//Information regarding the new contact being added
-@property (weak, nonatomic) IBOutlet UILabel *contactNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet CIImage *imageLabel;
 
 @end
