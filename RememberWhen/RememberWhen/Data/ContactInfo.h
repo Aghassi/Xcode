@@ -10,10 +10,12 @@
 
 @interface ContactInfo : NSObject
 
+//Contact information
 @property(nonatomic, retain) NSString *firstName;
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, copy) UIImage *picture;
 @property (nonatomic, strong) NSDate *date;
+
 //Used to look up the person in address book via a unique ID
 @property (nonatomic) int recordID;
 

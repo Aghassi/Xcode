@@ -14,6 +14,18 @@
 
 @implementation DetailViewController
 
+#pragma Dealing with quotes
+
+-(IBAction)addQuote:(id)sender{
+    UIAlertView *quote = [[UIAlertView alloc] initWithTitle:@"Input Quote"
+                                                   message:@"Enter quote here"
+                                                  delegate:nil
+                                         cancelButtonTitle:@"Ok"
+                                         otherButtonTitles:nil, nil];
+    quote.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [quote show];
+}
+
 #pragma mark - Managing the detail item
 
 - (void)setContactInfo:(ContactInfo *) newContactInfo{

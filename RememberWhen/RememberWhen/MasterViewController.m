@@ -92,6 +92,8 @@
 
 //Called after a person is added to the list
 -(void)updateTableView{
+    //If the size of the list has increased since last time, we know we have a new item
+    //We can then add that item to the table view
     if (lastSize<[self.dataController countOfList]) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.dataController countOfList]-1 inSection:0];
         NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
@@ -101,6 +103,7 @@
         [self.tableView endUpdates];
     }
     
+    //Set the last size so we don't keep expanding the table view.
     lastSize = [self.dataController countOfList];
 }
 

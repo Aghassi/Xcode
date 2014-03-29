@@ -63,7 +63,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="RememberWhen" id="tQt-TN-PWz">
+                    <navigationItem key="navigationItem" title="Remember When" id="tQt-TN-PWz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JBa-wL-iCL">
                             <connections>
                                 <action selector="showPicker:" destination="pGg-6v-bdr" id="s42-lg-erx"/>
@@ -75,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Detail View Controller - Quotes-->
         <scene sceneID="N0w-v0-idy">
             <objects>
                 <tableViewController id="bHA-kd-1B0" customClass="DetailViewController" sceneMemberID="viewController">
@@ -99,11 +99,17 @@
                             <outlet property="delegate" destination="bHA-kd-1B0" id="twb-V3-ska"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="nSk-0G-SoC"/>
+                    <navigationItem key="navigationItem" title="Quotes" id="nn9-A7-fAI">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="JQe-E3-6Cr">
+                            <connections>
+                                <action selector="addQuote:" destination="bHA-kd-1B0" id="a6g-mW-6wT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBk-20-iKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872" y="566"/>
+            <point key="canvasLocation" x="990" y="64"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

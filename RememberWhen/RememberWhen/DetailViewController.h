@@ -13,5 +13,6 @@
 
 @property (strong, nonatomic) ContactInfo *info;
 
+-(IBAction)addQuote:(id)sender;
 
 @end

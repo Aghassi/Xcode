@@ -16,6 +16,8 @@
 @end
 
 @implementation ContactInfoDataController
+/**Variables**/
+//Stores the current list of names to be shown
 NSMutableDictionary *contactList;
 
 //initializes the data set to be used
@@ -43,9 +45,18 @@ NSMutableDictionary *contactList;
 
 //Returns the object at a given index
 -(ContactInfo *)objectInListAtIndex: (NSUInteger)index{
+    //Create enumerator
     NSEnumerator *enumerator = [contactList objectEnumerator];
+    
+    //The current Contact Info to be returned
     id value;
+    
+    //The count until index is reached
     int count = 0;
+    
+    //Count until we get to the index that is wished.
+    //Each count will assign value to the object that is at the NEXT
+    //option
     while ((count <= index)) {
         /* code that acts on the dictionary’s values */
         value = [enumerator nextObject];
@@ -56,6 +67,7 @@ NSMutableDictionary *contactList;
 
 //Adds an contact with info to the list
 -(void)addContactInfoWithInfo:(ContactInfo *)info{
+    //Only add the object if the key value (based on the recordID) doesn't exist
     if(![contactList objectForKey:[NSNumber numberWithInt:info.recordID]]){
         [contactList setObject:info forKey:[NSNumber numberWithInt:info.recordID]];
     }
