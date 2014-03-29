@@ -12,9 +12,14 @@
 
 #import <Foundation/Foundation.h>
 #import "ContactInfo.h"
+@class ArchiveManagerController;
 
 @interface ContactInfoDataController : NSObject
 
+@property(nonatomic, strong)ArchiveManagerController *archivalManager;
+
+//Restoring data list
+-(void)restoreDataListFromDisk:(NSMutableDictionary *)restoreDictionary;
 
 //Methods required to get size,
 //add objects, and get object index

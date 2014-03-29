@@ -13,24 +13,8 @@
 
 /**Contact retrieval**/
 #pragma Contact Data
-
-
-//Saves the contacts
--(void)saveContactDataToDisk:(NSMutableDictionary *)dictionary{
-    [NSKeyedArchiver archiveRootObject:dictionary toFile:[self getPathForContacts]];
-}
-
-//Unarchives the contacts and returns a mutable dictionary
--(NSMutableDictionary *)retrieveContactDataFromDisk{
-    NSMutableDictionary *returnDictionary = (NSMutableDictionary *)[NSKeyedUnarchiver
-                                            unarchiveObjectWithFile:[self getPathForContacts]];
-    
-    return returnDictionary;
-    
-}
-
 //Gets the path for the contacts and returns it.
--(NSString *)getPathForContacts {
++(NSString *)getPathForContacts {
     
     NSArray *paths =
     NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
@@ -43,6 +27,22 @@
     return docFile;
     
 }
+
+//Saves the contacts
++(void)saveContactDataToDisk:(NSMutableDictionary *)dictionary{    
+    [NSKeyedArchiver archiveRootObject:dictionary toFile:[self getPathForContacts]];
+}
+
+//Unarchives the contacts and returns a mutable dictionary
++(NSMutableDictionary *)retrieveContactDataFromDisk{
+    NSMutableDictionary *returnDictionary = (NSMutableDictionary *)[NSKeyedUnarchiver
+                                            unarchiveObjectWithFile:[self getPathForContacts]];
+    
+    return returnDictionary;
+    
+}
+
+
 
 /**Quotes retrieval**/
 #pragma Quotes Data

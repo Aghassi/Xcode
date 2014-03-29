@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ContactInfo : NSObject
+
+@interface ContactInfo : NSObject <NSCoding>
 
 //Contact information
 @property(nonatomic, retain) NSString *firstName;

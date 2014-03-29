@@ -15,6 +15,7 @@
 @interface MasterViewController : UITableViewController <ABPeoplePickerNavigationControllerDelegate>
 
 @property(strong, nonatomic)ContactInfoDataController *dataController;
+@property(strong, nonatomic)ArchiveManagerController *archivalManager;
 
 //picture to be copied from contact info
 @property (nonatomic, copy) UIImage *picture;

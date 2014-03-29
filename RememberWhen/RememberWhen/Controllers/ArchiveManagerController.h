@@ -11,9 +11,9 @@
 @interface ArchiveManagerController : NSObject
 
 //Stores data to a plist for the list of contacts
--(void)saveContactDataToDisk:(NSMutableDictionary *)dictionary;
--(NSMutableDictionary *)retrieveContactDataFromDisk;
--(NSString *)getPathForContacts;
++(void)saveContactDataToDisk:(NSMutableDictionary *)dictionary;
++(NSMutableDictionary *)retrieveContactDataFromDisk;
++(NSString *)getPathForContacts;
 
 //Stores data from the quotes to disk
 -(void)saveQuotesDataToDisk:(NSMutableDictionary *)dictionary;

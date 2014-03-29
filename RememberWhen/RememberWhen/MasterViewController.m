@@ -20,16 +20,20 @@
 
 @implementation MasterViewController
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    self.dataController = [[ContactInfoDataController alloc]init];
-    
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.dataController = [[ContactInfoDataController alloc]init];
+    
+    //Restore data from disk
+    self.archivalManager = [[ArchiveManagerController alloc]init];
+    [self.dataController restoreDataListFromDisk:[ArchiveManagerController retrieveContactDataFromDisk]];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning

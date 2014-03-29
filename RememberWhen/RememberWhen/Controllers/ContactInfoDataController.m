@@ -7,6 +7,7 @@
 //
 
 #import "ContactInfoDataController.h"
+#import "ArchiveManagerController.h"
 
 //Class extention with private initialize method
 @interface ContactInfoDataController ()
@@ -31,8 +32,14 @@ NSMutableDictionary *contactList;
         
         return self;
     }
+    self.archivalManager = [[ArchiveManagerController alloc]init];
     
     return nil;
+}
+
+//Restores the contact list to that which is fed in from disk.
+-(void)restoreDataListFromDisk:(NSMutableDictionary *)restoreDictionary{
+    contactList = restoreDictionary;
 }
 
 
@@ -70,6 +77,11 @@ NSMutableDictionary *contactList;
     //Only add the object if the key value (based on the recordID) doesn't exist
     if(![contactList objectForKey:[NSNumber numberWithInt:info.recordID]]){
         [contactList setObject:info forKey:[NSNumber numberWithInt:info.recordID]];
+        
+#pragma Save Data
+        //Save new information to disk
+        [ArchiveManagerController saveContactDataToDisk:contactList];
+        
     }
 }
 
