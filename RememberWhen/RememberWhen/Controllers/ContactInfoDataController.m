@@ -39,7 +39,12 @@ NSMutableDictionary *contactList;
 
 //Restores the contact list to that which is fed in from disk.
 -(void)restoreDataListFromDisk:(NSMutableDictionary *)restoreDictionary{
-    contactList = restoreDictionary;
+    if (!restoreDictionary) {
+        contactList = [[NSMutableDictionary alloc]init];
+    }
+    else{
+        contactList = restoreDictionary;
+    }
 }
 
 
