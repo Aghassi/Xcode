@@ -29,6 +29,9 @@
     //Restore data from disk
     self.archivalManager = [[ArchiveManagerController alloc]init];
     [self.dataController restoreDataListFromDisk:[ArchiveManagerController retrieveContactDataFromDisk]];
+    
+    //Set button as edit button
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -145,8 +148,34 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return NO;
+    return YES;
 }
+
+//Called when removing an object from the table
+//Object is removed from list
+//List is saved
+//Table view is reloaded
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Remove the row from data model
+    [self.dataController removeContactInfoWithInfo:[self.dataController objectInListAtIndex:indexPath.row]];
+    [self.tableView reloadData];
+}
+
+//Sets the table to editable
+- (void)setEditing:(BOOL)editing animated:(BOOL)animate
+{
+    [super setEditing:editing animated:animate];
+    if(editing)
+    {
+        NSLog(@"editMode on");
+    }
+    else
+    {
+        NSLog(@"Edit mode off");
+    }
+}
+
 
 
 //Passes the necessary information from the table cell to the next scene

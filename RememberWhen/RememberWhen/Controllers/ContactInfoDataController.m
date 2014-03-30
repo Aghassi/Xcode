@@ -90,6 +90,16 @@ NSMutableDictionary *contactList;
     }
 }
 
+//Removes contact info from the NSMutableDictionary
+-(void)removeContactInfoWithInfo:(ContactInfo *)info{
+    if ([contactList objectForKey:[NSNumber numberWithInt:info.recordID]]) {
+        [contactList removeObjectForKey:[NSNumber numberWithInt:info.recordID]];
+        
+        //Save changes
+        [ArchiveManagerController saveContactDataToDisk:contactList];
+    }
+}
+
 //Returns the list of items
 -(NSMutableDictionary *)returnList{
     return  contactList;

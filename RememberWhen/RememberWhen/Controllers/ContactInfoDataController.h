@@ -26,6 +26,7 @@
 -(NSUInteger)countOfList;
 -(ContactInfo *)objectInListAtIndex:(NSUInteger)theIndex;
 -(void)addContactInfoWithInfo: (ContactInfo *)info;
+-(void)removeContactInfoWithInfo: (ContactInfo *)info;
 -(NSArray *)returnList;
 
 

@@ -64,6 +64,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Remember When" id="tQt-TN-PWz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="bJW-w7-K9c"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JBa-wL-iCL">
                             <connections>
                                 <action selector="showPicker:" destination="pGg-6v-bdr" id="s42-lg-erx"/>
