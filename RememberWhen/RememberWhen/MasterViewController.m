@@ -31,6 +31,7 @@
     [self.dataController restoreDataListFromDisk:[ArchiveManagerController retrieveContactDataFromDisk]];
 }
 
+//Shows the table on load once the data is assigned
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
@@ -64,6 +65,7 @@
     currentContact.lastName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
     currentContact.recordID =  ABRecordGetRecordID(person);
     
+    //Not currently used
     currentContact.picture = _picture;
     currentContact.date = _date;
     

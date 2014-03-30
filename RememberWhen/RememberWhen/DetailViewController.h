@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ContactInfo.h"
+@class ContactInfo;
+@class QuoteController;
+@class ArchiveManagerController;
 
 @interface DetailViewController : UITableViewController <UIAlertViewDelegate>
 
 @property (strong, nonatomic) ContactInfo *info;
+@property (nonatomic) QuoteController *quoteManager;
+@property (nonatomic) ArchiveManagerController *archiveManager;
 
 -(IBAction)addQuote:(id)sender;
 

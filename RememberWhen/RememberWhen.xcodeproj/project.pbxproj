@@ -12,6 +12,8 @@
 		D45FF83118E68E0100777234 /* ContactInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D45FF83018E68E0100777234 /* ContactInfo.m */; };
 		D45FF83318E72B1200777234 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45FF83218E72B1200777234 /* CoreData.framework */; };
 		D45FF83618E75E0E00777234 /* ArchiveManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45FF83518E75E0E00777234 /* ArchiveManagerController.m */; };
+		D45FF83918E7885500777234 /* QuotesInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D45FF83818E7885500777234 /* QuotesInfo.m */; };
+		D45FF83C18E7892600777234 /* QuoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45FF83B18E7892600777234 /* QuoteController.m */; };
 		D4772E0818ABDBA300016FAF /* ContactInfoDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4772E0718ABDBA300016FAF /* ContactInfoDataController.m */; };
 		D4C2B48018AAAF1800A23EB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C2B47F18AAAF1800A23EB9 /* Foundation.framework */; };
 		D4C2B48218AAAF1800A23EB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C2B48118AAAF1800A23EB9 /* CoreGraphics.framework */; };
@@ -48,6 +50,10 @@
 		D45FF83218E72B1200777234 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D45FF83418E75E0E00777234 /* ArchiveManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArchiveManagerController.h; path = Controllers/ArchiveManagerController.h; sourceTree = "<group>"; };
 		D45FF83518E75E0E00777234 /* ArchiveManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArchiveManagerController.m; path = Controllers/ArchiveManagerController.m; sourceTree = "<group>"; };
+		D45FF83718E7885500777234 /* QuotesInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuotesInfo.h; path = Data/QuotesInfo.h; sourceTree = "<group>"; };
+		D45FF83818E7885500777234 /* QuotesInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuotesInfo.m; path = Data/QuotesInfo.m; sourceTree = "<group>"; };
+		D45FF83A18E7892600777234 /* QuoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuoteController.h; path = Controllers/QuoteController.h; sourceTree = "<group>"; };
+		D45FF83B18E7892600777234 /* QuoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuoteController.m; path = Controllers/QuoteController.m; sourceTree = "<group>"; };
 		D4772E0618ABDBA300016FAF /* ContactInfoDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactInfoDataController.h; path = Controllers/ContactInfoDataController.h; sourceTree = "<group>"; };
 		D4772E0718ABDBA300016FAF /* ContactInfoDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactInfoDataController.m; path = Controllers/ContactInfoDataController.m; sourceTree = "<group>"; };
 		D4C2B47C18AAAF1800A23EB9 /* RememberWhen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RememberWhen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D45FF83D18E7893900777234 /* Archiving */ = {
+			isa = PBXGroup;
+			children = (
+				D45FF83418E75E0E00777234 /* ArchiveManagerController.h */,
+				D45FF83518E75E0E00777234 /* ArchiveManagerController.m */,
+			);
+			name = Archiving;
+			sourceTree = "<group>";
+		};
 		D4772E0118ABBE1B00016FAF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +129,8 @@
 			children = (
 				D45FF82F18E68E0100777234 /* ContactInfo.h */,
 				D45FF83018E68E0100777234 /* ContactInfo.m */,
+				D45FF83718E7885500777234 /* QuotesInfo.h */,
+				D45FF83818E7885500777234 /* QuotesInfo.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -132,8 +149,9 @@
 		D4772E0A18ABDBBC00016FAF /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D45FF83418E75E0E00777234 /* ArchiveManagerController.h */,
-				D45FF83518E75E0E00777234 /* ArchiveManagerController.m */,
+				D45FF83D18E7893900777234 /* Archiving */,
+				D45FF83A18E7892600777234 /* QuoteController.h */,
+				D45FF83B18E7892600777234 /* QuoteController.m */,
 				D4772E0618ABDBA300016FAF /* ContactInfoDataController.h */,
 				D4772E0718ABDBA300016FAF /* ContactInfoDataController.m */,
 			);
@@ -317,9 +335,11 @@
 				D4C2B49018AAAF1800A23EB9 /* AppDelegate.m in Sources */,
 				D4C2B49618AAAF1800A23EB9 /* MasterViewController.m in Sources */,
 				D45FF83618E75E0E00777234 /* ArchiveManagerController.m in Sources */,
+				D45FF83918E7885500777234 /* QuotesInfo.m in Sources */,
 				D4772E0818ABDBA300016FAF /* ContactInfoDataController.m in Sources */,
 				D4C2B48C18AAAF1800A23EB9 /* main.m in Sources */,
 				D4C2B49918AAAF1800A23EB9 /* DetailViewController.m in Sources */,
+				D45FF83C18E7892600777234 /* QuoteController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
