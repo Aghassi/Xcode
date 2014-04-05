@@ -135,9 +135,22 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    cell.textLabel.text = [self.dataController objectInListAtIndex:indexPath.row].lastName;
-    cell.detailTextLabel.text = [self.dataController objectInListAtIndex:indexPath.row].firstName;
-    cell.imageView.image = [self.dataController objectInListAtIndex:indexPath.row].picture;
+    //Name information
+    NSString *last = [self.dataController objectInListAtIndex:indexPath.row].lastName;
+    NSString *first = [self.dataController objectInListAtIndex:indexPath.row].firstName;
+    UIImage *contactImage = [self.dataController objectInListAtIndex:indexPath.row].picture;
+    
+    //If there is no last name, put the first name in the textLabel so it is legible
+    if (last == nil) {
+        cell.textLabel.text = first;
+        cell.detailTextLabel.text = nil;
+        cell.imageView.image = contactImage;
+    } else {
+        cell.textLabel.text = last;
+        cell.detailTextLabel.text = first;
+        cell.imageView.image = contactImage;
+
+    }
     return cell;
 }
 
