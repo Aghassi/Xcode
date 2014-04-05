@@ -63,12 +63,12 @@
         currentContact = [[ContactInfo alloc]init];
     }
     
-    currentContact.firstName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonFirstNameProperty));
-    currentContact.lastName = (NSString *) CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
+    currentContact.firstName = (__bridge NSString *)((ABRecordCopyValue(person, kABPersonFirstNameProperty)));
+    currentContact.lastName = ((__bridge NSString *)((ABRecordCopyValue(person, kABPersonLastNameProperty))));
     currentContact.recordID =  ABRecordGetRecordID(person);
     
-    currentContact.picture = _picture;
-    currentContact.date = _date;
+    //Grabs the contact image, converts it to NSData, and then converts it to a UIImage.
+    currentContact.picture = [UIImage imageWithData:(__bridge NSData *)(ABPersonCopyImageDataWithFormat(person, 0))];
     
     if (!self.dataController) {
         self.dataController = [[ContactInfoDataController alloc]init];
@@ -132,10 +132,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ContactInfoCell";
-    static NSDateFormatter *formatter = nil;
-    if (formatter == nil) {
-        formatter = [[NSDateFormatter alloc] init];
-    }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -176,10 +172,14 @@
     if(editing)
     {
         NSLog(@"editMode on");
+        //Can't add people while editing
+        self.navigationItem.rightBarButtonItem.enabled = false;
     }
     else
     {
         NSLog(@"Edit mode off");
+        //Can add people when done editing
+        self.navigationItem.rightBarButtonItem.enabled = true;
     }
 }
 

@@ -16,7 +16,6 @@
         _firstName = [aDecoder decodeObjectForKey:@"firstName"];
         _lastName = [aDecoder decodeObjectForKey:@"lastName"];
         _picture = [aDecoder decodeObjectForKey:@"picture"];
-        _date = [aDecoder decodeObjectForKey:@"date"];
         _recordID = [aDecoder decodeIntForKey:@"uniqueID"];
     }
     
@@ -27,7 +26,6 @@
     [aCoder encodeObject:self.firstName forKey:@"firstName"];
     [aCoder encodeObject:self.lastName forKey:@"lastName"];
     [aCoder encodeObject:self.picture forKey:@"picture"];
-    [aCoder encodeObject:self.date forKey:@"date"];
     [aCoder encodeInteger:self.recordID forKey:@"uniqueID"];
 }
 
