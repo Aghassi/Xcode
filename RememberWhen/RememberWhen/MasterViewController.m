@@ -157,8 +157,15 @@
 //Table view is reloaded
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"Prior to removal");
+    NSLog(@"%@", [self.dataController objectInListAtIndex:indexPath.row].firstName);
+    
     // Remove the row from data model
     [self.dataController removeContactInfoWithInfo:[self.dataController objectInListAtIndex:indexPath.row]];
+    NSLog(@"After removal");
+    NSLog(@"%@", [self.dataController objectInListAtIndex:indexPath.row].firstName);
+    
+    //Reload data
     [self.tableView reloadData];
 }
 
