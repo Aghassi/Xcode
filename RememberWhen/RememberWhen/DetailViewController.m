@@ -76,6 +76,7 @@ NSMutableArray *savedQuotes;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@'s Quotes", _info.firstName];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
