@@ -19,7 +19,6 @@
 
 //picture to be copied from contact info
 @property (nonatomic, copy) UIImage *picture;
-@property (nonatomic, strong) NSDate *date;
 
 //Called to load the contacts to load from
 -(IBAction)showPicker:(id)sender;

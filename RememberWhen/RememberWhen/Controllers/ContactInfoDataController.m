@@ -83,7 +83,7 @@ NSMutableDictionary *contactList;
     if(![contactList objectForKey:[NSNumber numberWithInt:info.recordID]]){
         [contactList setObject:info forKey:[NSNumber numberWithInt:info.recordID]];
         
-#pragma Save Data
+        #pragma Save Data
         //Save new information to disk
         [ArchiveManagerController saveContactDataToDisk:contactList];
         

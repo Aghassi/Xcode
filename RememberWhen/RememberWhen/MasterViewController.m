@@ -68,7 +68,7 @@
     currentContact.recordID =  ABRecordGetRecordID(person);
     
     //Grabs the contact image, converts it to NSData, and then converts it to a UIImage.
-    currentContact.picture = [UIImage imageWithData:(__bridge NSData *)(ABPersonCopyImageDataWithFormat(person, 0))];
+    currentContact.picture = [UIImage imageWithData:(__bridge NSData *)(ABPersonCopyImageDataWithFormat(person, 0)) scale:(7.1)];
     
     if (!self.dataController) {
         self.dataController = [[ContactInfoDataController alloc]init];
@@ -166,16 +166,21 @@
 //Table view is reloaded
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Prior to removal");
-    NSLog(@"%@", [self.dataController objectInListAtIndex:indexPath.row].firstName);
-    
-    // Remove the row from data model
-    [self.dataController removeContactInfoWithInfo:[self.dataController objectInListAtIndex:indexPath.row]];
-    NSLog(@"After removal");
-    NSLog(@"%@", [self.dataController objectInListAtIndex:indexPath.row].firstName);
-    
-    //Reload data
-    [self.tableView reloadData];
+    [tableView beginUpdates];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        NSLog(@"Prior to removal");
+        NSLog(@"%@", [self.dataController objectInListAtIndex:indexPath.row].firstName);
+        
+        // Remove the row from data model
+        [self.dataController removeContactInfoWithInfo:[self.dataController objectInListAtIndex:indexPath.row]];
+        
+        NSLog(@"After removal");
+        NSLog(@"%@", [self.dataController objectInListAtIndex:indexPath.row].firstName);
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    [tableView endUpdates];
 }
 
 //Sets the table to editable
