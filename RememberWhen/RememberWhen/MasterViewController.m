@@ -68,7 +68,8 @@
     currentContact.recordID =  ABRecordGetRecordID(person);
     
     //Grabs the contact image, converts it to NSData, and then converts it to a UIImage.
-    currentContact.picture = [UIImage imageWithData:(__bridge NSData *)(ABPersonCopyImageDataWithFormat(person, 0)) scale:(7.1)];
+    currentContact.picture = [UIImage imageWithData:(__bridge NSData *)(ABPersonCopyImageDataWithFormat(person, 0))];
+    
     
     if (!self.dataController) {
         self.dataController = [[ContactInfoDataController alloc]init];
@@ -139,6 +140,9 @@
     NSString *last = [self.dataController objectInListAtIndex:indexPath.row].lastName;
     NSString *first = [self.dataController objectInListAtIndex:indexPath.row].firstName;
     UIImage *contactImage = [self.dataController objectInListAtIndex:indexPath.row].picture;
+    //We set the scale of the image here incase the image is huge. We want to avoid the zooming bug.
+    contactImage = [UIImage imageWithCGImage:contactImage.CGImage scale:(contactImage.size.height/cell.frame.size.height) orientation:(contactImage.imageOrientation)];
+    
     
     //If there is no last name, put the first name in the textLabel so it is legible
     if (last == nil) {
