@@ -11,6 +11,7 @@
 #import "DetailViewController.h"
 #import "ContactInfoDataController.h"
 #import "ArchiveManagerController.h"
+#import "UIImage+Resize.h"
 
 @interface MasterViewController () {
     ContactInfo *currentContact;
@@ -62,6 +63,8 @@
     if(!currentContact){
         currentContact = [[ContactInfo alloc]init];
     }
+    
+    //Assigns the current contact info to the object to be passed to the cell.
     
     currentContact.firstName = (__bridge NSString *)((ABRecordCopyValue(person, kABPersonFirstNameProperty)));
     currentContact.lastName = ((__bridge NSString *)((ABRecordCopyValue(person, kABPersonLastNameProperty))));
@@ -140,9 +143,9 @@
     NSString *last = [self.dataController objectInListAtIndex:indexPath.row].lastName;
     NSString *first = [self.dataController objectInListAtIndex:indexPath.row].firstName;
     UIImage *contactImage = [self.dataController objectInListAtIndex:indexPath.row].picture;
-    //We set the scale of the image here incase the image is huge. We want to avoid the zooming bug.
-    contactImage = [UIImage imageWithCGImage:contactImage.CGImage scale:(contactImage.size.height/cell.frame.size.height) orientation:(contactImage.imageOrientation)];
     
+    //We set the scale of the image here incase the image is huge. We want to avoid the zooming bug.
+    contactImage = [UIImage imageWithCGImage:contactImage.CGImage scale:(contactImage.size.height/cell.frame.size.height) orientation:(contactImage.imageOrientation)]; 
     
     //If there is no last name, put the first name in the textLabel so it is legible
     if (last == nil) {

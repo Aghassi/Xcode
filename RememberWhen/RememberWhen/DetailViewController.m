@@ -8,10 +8,6 @@
 
 #import "DetailViewController.h"
 
-@interface DetailViewController ()
-- (void)configureView;
-@end
-
 @implementation DetailViewController
 //Array to store quotes
 NSMutableArray *savedQuotes;
@@ -55,30 +51,24 @@ NSMutableArray *savedQuotes;
     if (_info != newContactInfo) {
         _info = newContactInfo;
         
-        //Update the view.
-        [self configureView];
     }
 }
 
-
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-    
-    static NSDateFormatter *formatter = nil;
-    if (formatter == nil) {
-        formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateStyle:NSDateFormatterMediumStyle];
-    }
-    
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = [NSString stringWithFormat:@"%@'s Quotes", _info.firstName];
-	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    
+    //Set the title of the scene
+    //If no first name, use the last name
+    if (_info.firstName) {
+        self.navigationItem.title = [NSString stringWithFormat:@"%@'s Quotes", _info.firstName];
+    }
+    else{
+        self.navigationItem.title = [NSString stringWithFormat:@"%@'s Quotes", _info.lastName];
+    }
+    
+
 }
 
 - (void)didReceiveMemoryWarning
