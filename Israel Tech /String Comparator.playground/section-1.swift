@@ -32,7 +32,7 @@ func compare(var setString: String, var strString: String) -> Int{
     
     //Check for no string in one or both
     if(checkIfEmpty(setString, strString)){
-        return 0;
+        return -1;
     }
     
     //Gets string with trimmed white spaces.
@@ -48,7 +48,7 @@ func compare(var setString: String, var strString: String) -> Int{
     
     //Checks each character in the strings and sees if they are the same
     for var i = 0; i < index; ++i{
-        if(Array(setString)[i] == Array(strString)[i]){
+        if(Array(strString)[i] == Array(setString)[i]){
             return i
         }
     }
