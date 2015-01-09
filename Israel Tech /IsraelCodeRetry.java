@@ -1,3 +1,12 @@
+/**
+* Israel Tech Challenge Code Warm Up
+*
+* Goal is to compare two strings and find the first
+* index where they have the same character
+* @author David Aghassi
+* 1/5/2015
+**/
+
 import java.util.HashMap;
 
 public class IsraelCodeRetry {
@@ -19,6 +28,12 @@ public class IsraelCodeRetry {
 		return str;
 	}
 
+	/**
+	* A method to compare two string to find the first character that exists in both
+	* @param baseString The string being read into a hashMap
+	* @param compareString The string being iterated over to find like characters
+	* @return -1 if no string, or null parameters, the index of the char otherwise
+	**/
 	public static Integer compare (String baseString, String compareString){
 		//Null check
 		if(checkIfEmpty(baseString, compareString)){
@@ -47,7 +62,15 @@ public class IsraelCodeRetry {
 		return -1;
 	}
 
-	private static boolean checkIfEmpty(String one, String two){
-		return (one.equals(null) || two.equals(null));
+
+	private static boolean checkIfEmpty(String... checks){
+		//Checks all params for null
+		for (String check : checks ){
+			if(check.equals(null)){
+				return true;
+			}
+		}
+
+		return false;
 	}
 }
